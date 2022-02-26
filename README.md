@@ -1,2 +1,2 @@
 # 475-Dots-and-Boxes
-Peoples: Dustin Nash
+Collaborators: Dustin Nash, McCrae Smith, Alex Harris, Firaol Ensermu
