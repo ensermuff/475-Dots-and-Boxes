@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.043"
-        tools:srcCompat="@drawable/Squares" />
+        tools:srcCompat="@drawable/squares" />
 
     <ImageView
         android:id="@+id/Vcu"
@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoBtn"
         app:layout_constraintVertical_bias="0.825"
-        tools:srcCompat="@drawable/VCU" />
+        tools:srcCompat="@drawable/vcu" />
 
     <ImageButton
         android:id="@+id/infoBtn"
