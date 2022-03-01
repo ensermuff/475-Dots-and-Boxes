@@ -8,28 +8,29 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="141dp"
-        android:layout_height="49dp"
-        android:text="Squares"
+        android:layout_width="270dp"
+        android:layout_height="67dp"
+        android:fontFamily="sans-serif-black"
+        android:text="SQUARES"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageView
         android:id="@+id/SquaresLogo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="163dp"
+        android:layout_height="178dp"
         android:contentDescription="Squares logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.043"
+        app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@drawable/squares" />
 
     <ImageView
@@ -40,60 +41,77 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoBtn"
-        app:layout_constraintVertical_bias="0.825"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@drawable/vcu" />
 
-    <ImageButton
-        android:id="@+id/infoBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#13CCBA"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/Vcu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsBtn"
-        app:layout_constraintVertical_bias="0.162"
-        app:srcCompat="@drawable/ic_info" />
-
-    <ImageButton
-        android:id="@+id/settingsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#0B8DE3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SquaresLogo"
-        app:layout_constraintVertical_bias="0.092"
-        app:srcCompat="@drawable/ic_settings" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <ImageButton
-        android:id="@+id/historyBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#6F2ADD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playBtn"
-        app:layout_constraintVertical_bias="0.162"
-        app:srcCompat="@drawable/ic_history" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/playBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#F44336"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SquaresLogo"
-        app:layout_constraintVertical_bias="0.092"
-        app:srcCompat="@drawable/ic_play" />
+            <ImageButton
+                android:id="@+id/playBtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#F44336"
+                app:srcCompat="@drawable/ic_play" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/settingsBtn"
+                android:layout_width="102dp"
+                android:layout_height="match_parent"
+                android:background="#0B8DE3"
+                app:srcCompat="@drawable/ic_settings" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/historyBtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#6F2ADD"
+                app:srcCompat="@drawable/ic_history" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/infoBtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#13CCBA"
+                app:srcCompat="@drawable/ic_info" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
