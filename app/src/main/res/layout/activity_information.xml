@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformationActivity">
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="208dp"
+        android:layout_height="63dp"
+        android:fontFamily="sans-serif-black"
+        android:text="ABOUT"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <ImageButton
+        android:id="@+id/returnBtn"
+        android:layout_width="89dp"
+        android:layout_height="94dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/about"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
+        app:srcCompat="@drawable/returnbtn" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="336dp"
+        android:layout_height="466dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about"
+        android:background="@drawable/box">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOW TO PLAY"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="209dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="195dp"
+            android:layout_height="157dp"
+            android:text="BRIEF DESCRIPTION ON HOW TO PLAY THE GAME, HOW TO USE UI."
+            android:background="@color/white"
+            android:layout_gravity="center_horizontal"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="253dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREDITS"
+            android:background="@color/white"
+            android:layout_gravity="center_horizontal"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="433dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="217dp"
+            android:layout_height="163dp"
+            android:text="TEAM INFORMATION, PROJECT  INFORMATION, ASSET  ACCREDItATIONS."
+            android:background="@color/white"
+            android:layout_gravity="center_horizontal"
+            tools:layout_editor_absoluteX="117dp"
+            tools:layout_editor_absoluteY="485dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
