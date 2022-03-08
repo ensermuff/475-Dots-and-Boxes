@@ -27,8 +27,16 @@ public class GameCanvas extends View
         paint.setColor(Color.BLUE);
         paint.setStrokeWidth(1);
 
-        canvas.drawRect(300,300, 200, 200, paint);
-        canvas.drawRect(1000,1000, 100, 100, paint);
+        /*canvas.drawRect(300,300, 200, 200, paint);
+        canvas.drawRect(1000,1000, 900, 900, paint);*/
+
+        paint.setColor(getResources().getColor(R.color.colorAccent));
+        for (int i = 0; i < game.getHeight() + 1; i++) {
+            for (int j = 0; j < game.getWidth() + 1; j++) {
+                canvas.drawCircle(start + add6 + j * add5 + 1, start + add6 + i * add5 + 1,
+                        radius, paint);
+            }
+        }
 
         /*row = 300;
         column = 300;
