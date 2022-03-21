@@ -69,9 +69,9 @@
             android:id="@+id/textView6"
             android:layout_width="195dp"
             android:layout_height="157dp"
-            android:text="BRIEF DESCRIPTION ON HOW TO PLAY THE GAME, HOW TO USE UI."
-            android:background="@color/white"
             android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:text="Playing squares is easy!\nJust click a space in between two dots to create a line. The first player to complete a box wins that square and gets to go again. The player who captures the most squares at the end is the winner!"
             tools:layout_editor_absoluteX="120dp"
             tools:layout_editor_absoluteY="253dp" />
 
@@ -99,7 +99,7 @@
             android:id="@+id/textView8"
             android:layout_width="217dp"
             android:layout_height="163dp"
-            android:text="TEAM INFORMATION, PROJECT  INFORMATION, ASSET  ACCREDItATIONS."
+            android:text="VCU Student Group Project\nTeam:\nFiraol Ensermu\nAlexander Harris\nDustin Nash\nMcCrae Smith"
             android:background="@color/white"
             android:layout_gravity="center_horizontal"
             tools:layout_editor_absoluteX="117dp"
