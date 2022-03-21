@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ensermuff.vcu.edu.cmsc475demo">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CMSC475Demo">
         <activity
-            android:name=".InformationActivity"
-            android:exported="false" />
+            android:name=".Activities.InformationActivity"
+            android:exported="true" />
         <activity
-            android:name=".GameActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SettingsActivity"
-            android:exported="false"
+            android:name=".Activities.SettingsActivity"
+            android:exported="true"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.GameActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
-package ensermuff.vcu.edu.cmsc475demo;
+package ensermuff.vcu.edu.cmsc475demo.Activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
+
+import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class SettingsActivity extends AppCompatActivity {
 

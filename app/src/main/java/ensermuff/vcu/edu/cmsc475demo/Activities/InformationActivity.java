@@ -1,11 +1,11 @@
-package ensermuff.vcu.edu.cmsc475demo;
+package ensermuff.vcu.edu.cmsc475demo.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class InformationActivity extends AppCompatActivity {
 
