@@ -46,7 +46,7 @@
         tools:srcCompat="@drawable/vcu" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="16dp"
