@@ -9,7 +9,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="8dp"
         android:text="Button"
@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/button3"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
@@ -32,15 +32,15 @@
 
     <ensermuff.vcu.edu.cmsc475demo.GameView
         android:id="@+id/gameView"
-        android:layout_width="392dp"
-        android:layout_height="401dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="144dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.764" />
 
 

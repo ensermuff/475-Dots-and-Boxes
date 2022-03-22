@@ -1,6 +1,7 @@
 package ensermuff.vcu.edu.cmsc475demo;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -22,18 +23,24 @@ public class GameView extends View {
         super(context);
         this.model = model;
 
-        player1 = GameActivity.player1;
+        /*player1 = GameActivity.player1;
         player2 = GameActivity.player2;
         if (player1 == null) {
             player1 = "Player1";
         }
         if (player2 == null) {
             player2 = "Player2";
-        }
+        }*/
+
+        player1 = "Player1";
+        player2 = "Player2";
 
         paint.setColor(Color.WHITE);
         paint.setStrokeWidth(8);
+        setMinimumHeight(100);
         this.setFocusableInTouchMode(true);
+
+
     }
 
     public void onDraw(Canvas canvas) {
@@ -56,15 +63,23 @@ public class GameView extends View {
             }
         }
 
+        //Rectangles for background of text
+        paint.setColor(Color.RED);
+        canvas.drawRect(0,0,700,200, paint);
+
+        paint.setColor(Color.BLUE);
+        canvas.drawRect(800,0,1600,200, paint);
+
+
         paint.setTextSize(getWidth() / 10);
         paint.setTextAlign(Paint.Align.LEFT);
-        paint.setColor(Color.RED);
+        paint.setColor(Color.WHITE);
         canvas.drawText("Player1: " + model.getPlayers()[0].getScore(), 0,125,paint);
         paint.setTextSize((int) (getWidth() / 10 * 1.2));
 //        canvas.drawText(model.getPlayers()[0].getScore() + "", getWidth() / 10, getWidth() / 10 * 2, paint);
 
         paint.setTextAlign(Paint.Align.RIGHT);
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.WHITE);
         paint.setTextSize(getWidth() / 10);
         canvas.drawText("Player2: " + model.getPlayers()[1].getScore(), getWidth(),125,paint);
         paint.setTextSize((int) (getWidth() / 10 * 1.2));
@@ -187,6 +202,8 @@ public class GameView extends View {
         }
         return true;
     }
+
+
 }
 
 
