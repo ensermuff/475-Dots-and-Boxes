@@ -81,6 +81,9 @@ public class GameView extends View {
         paint.setColor(Color.BLUE);
         canvas.drawRect(800,0,1600,200, paint);
 
+        paint.setColor(Color.BLUE);
+        canvas.drawRect(canvas.getWidth() / 3, 2400, 1000, 2600, paint);
+
 
         paint.setTextSize(getWidth() / 10);
         paint.setTextAlign(Paint.Align.LEFT);

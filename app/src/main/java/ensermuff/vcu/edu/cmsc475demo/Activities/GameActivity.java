@@ -1,5 +1,6 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -8,12 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.widget.LinearLayout;
+import ensermuff.vcu.edu.cmsc475demo.GameView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import ensermuff.vcu.edu.cmsc475demo.R;
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
-import ensermuff.vcu.edu.cmsc475demo.GameView;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class GameActivity extends AppCompatActivity {
     GameDataModel model;
     Intent intent;
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -40,6 +42,5 @@ public class GameActivity extends AppCompatActivity {
         model = new GameDataModel(screenSize);
         view = new GameView(this, model);
         setContentView(view);
-
     }
 }
