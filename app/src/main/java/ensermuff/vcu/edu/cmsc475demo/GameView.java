@@ -1,10 +1,13 @@
 package ensermuff.vcu.edu.cmsc475demo;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Build;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +25,14 @@ public class GameView extends View {
     public GameView(Context context, GameDataModel model) {
         super(context);
         this.model = model;
+
+        //set game screen to fullscreen, have to cast to Activity since getWindow() doesn't work on a custom view
+        View decorView = ((Activity)getContext()).getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+
+
 
         /*player1 = GameActivity.player1;
         player2 = GameActivity.player2;
