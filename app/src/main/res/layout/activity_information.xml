@@ -52,7 +52,7 @@
                     android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="@font/syncopate"
                     android:text="ABOUT"
                     android:textAlignment="center"
                     android:textSize="48sp" />
@@ -103,6 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:background="@color/white"
+                    android:fontFamily="@font/syncopate"
                     android:text="HOW TO PLAY"
                     android:textAlignment="center"
                     android:textSize="20sp"
@@ -181,6 +182,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@color/white"
+                android:fontFamily="@font/syncopate"
                 android:text="CREDITS"
                 tools:layout_editor_absoluteX="120dp"
                 tools:layout_editor_absoluteY="433dp" />
