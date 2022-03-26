@@ -4,14 +4,4 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SettingsActivity">
-
-
-    <ImageButton
-        android:id="@+id/settingsBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/backbtnpurple"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="45dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".Activities.SettingsActivity"/>

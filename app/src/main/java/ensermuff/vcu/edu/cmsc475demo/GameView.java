@@ -31,9 +31,6 @@ public class GameView extends View {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-
-
-
         /*player1 = GameActivity.player1;
         player2 = GameActivity.player2;
         if (player1 == null) {
@@ -121,13 +118,6 @@ public class GameView extends View {
             paint.setTextSize((int) (getWidth() / 10 * 0.6));
             canvas.drawText("Touch the screen to restart", getWidth() / 2, getHeight() - getHeight() / 24, paint);
         }
-        /*
-        messing around with creating a button
-            Button mybutton = new Button();
-            mybutton.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            GameView.addView(mybutton);
-
-         */
     }
 
     @Override
