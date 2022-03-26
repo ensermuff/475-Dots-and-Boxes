@@ -7,6 +7,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,19 +28,22 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_game);
 
         intent = getIntent();
         player1 = intent.getStringExtra("player1");
         player2 = intent.getStringExtra("player2");
 
         Display display = getWindowManager().getDefaultDisplay();
+        //Point screenSize = new Point(1000, 1500); // Entire device screen is x=1440 and y=2701
         Point screenSize = new Point();
-        display.getSize(screenSize);
+        display.getSize(screenSize); // Entire device screen is x=1440 and y=2701
         Log.d("ddamddi", " [SIZE]   WIDTH:" + screenSize.x + " HEIGHT:" + screenSize.y);
         model = new GameDataModel(screenSize);
         view = new GameView(this, model);
-        setContentView(view);
+//        setContentView(view);
 
+        LinearLayout v = (LinearLayout) findViewById(R.id.linearLayout);
+        v.addView(view);
     }
 }
