@@ -76,7 +76,7 @@ public class GameView extends View {
         canvas.drawRect(0,0,700,200, paint);
 
         paint.setColor(Color.BLUE);
-        canvas.drawRect(800,0,1600,200, paint);
+        canvas.drawRect(740,0,1440,200, paint);
 
         paint.setColor(Color.BLUE);
         canvas.drawRect(canvas.getWidth() / 3, 2400, 1000, 2600, paint);
