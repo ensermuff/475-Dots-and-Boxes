@@ -4,7 +4,7 @@
     <style name="InfoStyle">
         <item name="android:layout_width">325dp</item>
         <item name="android:layout_height">236dp</item>
-        <item name="android:background">@drawable/box</item>
+        <item name="android:background">@drawable/box_light_blue</item>
         <item name="android:orientation">vertical</item>
     </style>
 </resources>

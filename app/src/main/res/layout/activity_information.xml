@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/box"
+                android:background="@drawable/box_light_blue"
                 android:orientation="vertical"></LinearLayout>
 
             <Space
@@ -120,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/box"
+                android:background="@drawable/box_light_blue"
                 android:orientation="vertical">
 
                 <Space
