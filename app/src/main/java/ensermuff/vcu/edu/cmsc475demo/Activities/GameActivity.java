@@ -55,8 +55,11 @@ public class GameActivity extends AppCompatActivity {
                 }else{
                     mySongs.start();
                 }
+                openDialog();
             }
         });
+
+
         Display display = getWindowManager().getDefaultDisplay();
         //Point screenSize = new Point(1000, 1500); // Entire device screen is x=1440 and y=2701
         Point screenSize = new Point();
@@ -69,6 +72,12 @@ public class GameActivity extends AppCompatActivity {
         myView.addView(view);
 //        LinearLayout v = (LinearLayout) findViewById(R.id.linearLayout);
 //        v.addView(view);
+    }
+
+    public void openDialog() {
+
+        MenuDialog menuDialog = new MenuDialog();
+        menuDialog.show(getSupportFragmentManager(), "Testing");
     }
 
 }
