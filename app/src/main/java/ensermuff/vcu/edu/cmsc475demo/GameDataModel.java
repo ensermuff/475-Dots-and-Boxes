@@ -7,12 +7,14 @@ import java.util.ArrayList;
 
 public class GameDataModel {
     public static final int GRID = 5;
-    public static int turn, LEFT_TIME;
+    public static int turn;
     public static boolean isGameOver, isDrawGame, isBack;
     private static ArrayList<Line> lines;
     private static Area[][] areas;
     private static Player[] players;
-    private static int xMin, yMin, deadArea, LENGTH;
+    private static int xMin;
+    private static int yMin;
+    private static int LENGTH;
     private GridPoint[][] gridPoints;
 
     public GameDataModel(Point screenSize) {
@@ -28,7 +30,6 @@ public class GameDataModel {
     public static void turnover() {
         playerLog();
         turn++;
-        LEFT_TIME = 20;
     }
 
     public static boolean checkArea(Line touchline) {
@@ -93,7 +94,6 @@ public class GameDataModel {
         if (isOccupied) {
             turn--;
             turnover();
-            LEFT_TIME = 10;
         }
         return isOccupied;
     }
@@ -115,7 +115,7 @@ public class GameDataModel {
     }
 
     public static void playerLog() {
-        Log.d("ddamddi", "[SCORE]   PLAYER1 : " + players[0].getScore() + "   " + "PLAYER2 : " + players[1].getScore() + "   " + "Dead Area: " + deadArea);
+        Log.d("ddamddi", "[SCORE]   PLAYER1 : " + players[0].getScore() + "   " + "PLAYER2 : " + players[1].getScore());
         Log.d("ddamddi", " [TURN]   Player " + (turn % 2 + 1) + "'s Turn");
     }
 
@@ -130,7 +130,7 @@ public class GameDataModel {
         gridPoints = new GridPoint[GRID + 1][GRID + 1];
         areas = new Area[GRID][GRID];
         lines = new ArrayList<>();
-        turn = deadArea = 0;
+        turn = 0;
         isGameOver = isDrawGame = isBack = false;
 
         // Player Initialize
@@ -177,18 +177,7 @@ public class GameDataModel {
                 }
             }
         }
-
-        // Check and Count Dead Area
-        for (int x = 0; x < GRID; x++) {
-            for (int y = 0; y < GRID; y++) {
-                if (areas[x][y].isLocked()) {
-                    areas[x][y].setOwner(-1);
-                    deadArea++;
-                }
-            }
-        }
         playerLog();
-        LEFT_TIME = 20;
     }
 
     public Player[] getPlayers() {
@@ -196,7 +185,7 @@ public class GameDataModel {
     }
 
     public boolean checkGameOver() {
-        int p1 = 0, p2 = 0, unOccupied = GRID * GRID - deadArea;
+        int p1 = 0, p2 = 0, unOccupied = GRID * GRID;
 
         // Check the area (score) earned by the player
         for (Area[] areas : areas) {

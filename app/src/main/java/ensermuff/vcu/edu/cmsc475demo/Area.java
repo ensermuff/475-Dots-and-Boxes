@@ -78,4 +78,16 @@ public class Area {
                 getCenter().getX() + GameDataModel.getLENGTH() / 3, getCenter().getY() + GameDataModel.getLENGTH() / 3);
         canvas.drawRect(square, paint);
     }
+
+    public boolean isOccupied() {
+        return isOccupied;
+    }
+
+    public Rect getSquare() {
+        return square;
+    }
+
+    public Paint getPaint() {
+        return paint;
+    }
 }

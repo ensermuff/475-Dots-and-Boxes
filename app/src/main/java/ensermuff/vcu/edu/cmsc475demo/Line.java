@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-enum LINE_TYPE {HORIZONTAL, VERTICAL};
+;
 
 public class Line {
     static int WIDTH = 25;
@@ -14,7 +14,6 @@ public class Line {
     private Rect bounds;
     private Paint paint;
     private LINE_TYPE line_type;
-    public int playerIndex;
 
     public Line(GridPoint p1, GridPoint p2, LINE_TYPE line_type) {
         this.p1 = p1;

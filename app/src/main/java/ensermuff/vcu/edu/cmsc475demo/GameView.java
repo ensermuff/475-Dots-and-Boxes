@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 import ensermuff.vcu.edu.cmsc475demo.Activities.GameActivity;
 
 public class GameView extends View {
@@ -21,6 +23,26 @@ public class GameView extends View {
     Paint paint = new Paint();
     GameDataModel model;
     String player1, player2;
+
+//    ArrayList<GridPoint> p1 = new ArrayList<>();
+//    ArrayList<GridPoint> p2 = new ArrayList<>();
+//    ArrayList<LINE_TYPE> line_types = new ArrayList<>();
+//    ArrayList<Line> lines = new ArrayList<>();
+//    ArrayList<Area> areas = new ArrayList<>();
+
+//    static GridPoint lastPoint;
+//    static GridPoint lasttPoint2;
+//    static LINE_TYPE lastLineType;
+
+//    public static GridPoint getLastPoint() {
+//        return lastPoint;
+//    }
+//    public static LINE_TYPE getLastLineType() {
+//        return lastLineType;
+//    }
+//    public static GridPoint getLasttPoint2() {
+//        return lasttPoint2;
+//    }
 
     public GameView(Context context, GameDataModel model) {
         super(context);
@@ -104,7 +126,7 @@ public class GameView extends View {
         } else {
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));
-            canvas.drawText("GAME OVER", getWidth() / 2, (int) (getWidth() / 10 * 3), paint);
+            canvas.drawText("GAME OVER", getWidth() / 2, (int) (getWidth() / 10 * 3) + 25, paint);
             if (model.isDrawGame)
                 canvas.drawText("DRAW", getWidth() / 2, (int) (getWidth() / 10 * 4), paint);
             else
@@ -145,6 +167,15 @@ public class GameView extends View {
                                     line.getPaint().setColor(Color.BLUE);
 
                                 }
+//                                lastPoint = line.getP1();
+//                                lasttPoint2 = line.getP2();
+//                                lastLineType = line.getLINE_TYPE();
+//                                p1.add(line.getP1());
+//                                p2.add(line.getP2());
+//                                line_types.add(line.getLINE_TYPE());
+//                                lines.add(line);
+
+
                                 line.setDraw(true);
                                 isClickedLine = true;
                                 Log.d("ddamddi", " [LINE]" +
@@ -173,6 +204,11 @@ public class GameView extends View {
                                     line.getPaint().setColor(Color.BLUE);
 
                                 }
+
+//                                lastPoint = line.getP1();
+//                                lasttPoint2 = line.getP2();
+//                                lastLineType = line.getLINE_TYPE();
+
                                 line.setDraw(true);
                                 isClickedLine = true;
                                 Log.d("ddamddi", " [LINE]   (" + (line.getP1().getX() - GameDataModel.getxMin()) / GameDataModel.getLENGTH() + "," + (line.getP1().getY() - GameDataModel.getyMin()) / GameDataModel.getLENGTH() + ")-(" + (line.getP2().getX() - GameDataModel.getxMin()) / GameDataModel.getLENGTH() + "," + (line.getP2().getY() - GameDataModel.getyMin()) / GameDataModel.getLENGTH() + ") is Drawn");
