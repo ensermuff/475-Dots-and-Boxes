@@ -84,7 +84,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void openDialog() {
-
+        
         final Dialog menuDialog = new Dialog(GameActivity.this);
         //added custom view to dialog with no title
         menuDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
