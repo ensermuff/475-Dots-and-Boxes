@@ -38,6 +38,7 @@ public class GameActivity extends AppCompatActivity {
         player2 = intent.getStringExtra("player2");
 
         mySongs = MediaPlayer.create(getApplicationContext(), R.raw.schemingweasal);
+        mySongs.setLooping(true);
         mySongs.start();
 
 
