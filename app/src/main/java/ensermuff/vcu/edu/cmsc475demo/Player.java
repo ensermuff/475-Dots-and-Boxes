@@ -18,4 +18,6 @@ public class Player {
     public void addScore() {
         this.score++;
     }
+
+    public void subtractScore(){ this.score--; }
 }
