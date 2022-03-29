@@ -21,7 +21,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import ensermuff.vcu.edu.cmsc475demo.GridPoint;
 import ensermuff.vcu.edu.cmsc475demo.LINE_TYPE;
 import ensermuff.vcu.edu.cmsc475demo.Line;
@@ -29,6 +28,7 @@ import ensermuff.vcu.edu.cmsc475demo.MenuDialog;
 import ensermuff.vcu.edu.cmsc475demo.Player;
 import ensermuff.vcu.edu.cmsc475demo.R;
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
+import ensermuff.vcu.edu.cmsc475demo.GameView;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -70,6 +70,7 @@ public class GameActivity extends AppCompatActivity {
                 }else{
                     mySongs.start();
                 }
+                openDialog();
             }
         });
         Button undoTurn = findViewById(R.id.undoTurn);
@@ -131,5 +132,10 @@ public class GameActivity extends AppCompatActivity {
 //        v.addView(view);
     }
 
+    public void openDialog() {
+
+        MenuDialog menuDialog = new MenuDialog();
+        menuDialog.show(getSupportFragmentManager(), "Testing");
+    }
 
 }
