@@ -1,10 +1,7 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -13,16 +10,13 @@ import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import ensermuff.vcu.edu.cmsc475demo.GameView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import ensermuff.vcu.edu.cmsc475demo.MenuDialog;
-import ensermuff.vcu.edu.cmsc475demo.R;
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
 import ensermuff.vcu.edu.cmsc475demo.GameView;
+import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -32,7 +26,6 @@ public class GameActivity extends AppCompatActivity {
     GameDataModel model;
     Intent intent;
     MediaPlayer mySongs;
-    MenuDialog myMenuDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +37,7 @@ public class GameActivity extends AppCompatActivity {
         player1 = intent.getStringExtra("player1");
         player2 = intent.getStringExtra("player2");
 
-        mySongs = MediaPlayer.create(getApplicationContext(), R.raw.releasethefire);
+        mySongs = MediaPlayer.create(getApplicationContext(), R.raw.schemingweasal);
         mySongs.start();
 
 
