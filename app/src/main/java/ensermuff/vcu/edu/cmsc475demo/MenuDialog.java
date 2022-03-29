@@ -9,10 +9,12 @@ import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+import ensermuff.vcu.edu.cmsc475demo.Activities.GameActivity;
 import ensermuff.vcu.edu.cmsc475demo.Activities.InformationActivity;
 import ensermuff.vcu.edu.cmsc475demo.Activities.MainActivity;
 
 public class MenuDialog extends AppCompatDialogFragment {
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){

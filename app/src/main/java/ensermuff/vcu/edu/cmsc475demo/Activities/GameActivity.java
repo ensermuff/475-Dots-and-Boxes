@@ -1,6 +1,7 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import ensermuff.vcu.edu.cmsc475demo.GameView;
@@ -74,10 +76,44 @@ public class GameActivity extends AppCompatActivity {
 //        v.addView(view);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(mySongs != null)
+            mySongs.start();
+    }
+
     public void openDialog() {
 
-        MenuDialog menuDialog = new MenuDialog();
-        menuDialog.show(getSupportFragmentManager(), "Testing");
+        final Dialog menuDialog = new Dialog(GameActivity.this);
+        //added custom view to dialog with no title
+        menuDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //menuDialog.show(getSupportFragmentManager(), "Testing");
+        menuDialog.setCancelable(true);
+        //Mention the name of the custom dialog
+        menuDialog.setContentView(R.layout.menudialog);
+
+        Button cancelBtn = menuDialog.findViewById(R.id.dialog_cancel);
+        Button okBtn = menuDialog.findViewById(R.id.dialog_ok);
+
+        cancelBtn.setOnClickListener((v) ->{
+
+            //Resume song
+            onResume();
+
+            menuDialog.dismiss();
+        });
+
+        okBtn.setOnClickListener((v) ->{
+            Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(startIntent);
+            //Stop song
+            mySongs.stop();
+        });
+
+        menuDialog.show();
+
+
     }
 
 }
