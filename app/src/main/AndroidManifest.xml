@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CMSC475Demo">
         <activity
+            android:name=".Activities.HistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.InformationActivity"
             android:exported="true" />
         <activity
@@ -21,7 +24,7 @@
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".Activities.GameActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true">
@@ -35,7 +38,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

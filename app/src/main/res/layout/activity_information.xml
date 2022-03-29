@@ -14,23 +14,25 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1" />
+            android:layout_height="10dp"
+            android:layout_weight="0" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="60dp">
 
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2" />
+                android:layout_weight="0" />
 
             <ImageButton
                 android:id="@+id/returnBtn"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:contentDescription="Backbutton"
+                android:padding="0dp"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/returnbtn" />
 
             <Space
@@ -56,7 +58,8 @@
                     android:fontFamily="@font/syncopate"
                     android:text="ABOUT"
                     android:textAlignment="center"
-                    android:textSize="48sp" />
+                    android:textSize="48sp"
+                    android:textStyle="bold" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -127,8 +130,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="0.8"
                                 android:background="#FFFFFF"
+                                android:fontFamily="@font/syncopate"
                                 android:text="HOW TO PLAY"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
 
                             <Space
                                 android:layout_width="wrap_content"
@@ -148,8 +154,11 @@
                             android:layout_weight="1"
                             android:autoText="false"
                             android:background="#FFFFFF"
+                            android:fontFamily="@font/syncopate"
                             android:text="Playing squares is easy!\nJust click a space in between two dots to create a line.\nThe first player to complete a box wins that square\nand gets to go again.\nThe player who captures the most squares\nat the end is the winner!"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -229,8 +238,11 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="0.8"
                                 android:background="#FFFFFF"
+                                android:fontFamily="@font/syncopate"
                                 android:text="CREDITS"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
 
                             <Space
                                 android:layout_width="wrap_content"
@@ -249,8 +261,11 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="#FFFFFF"
+                            android:fontFamily="@font/syncopate"
                             android:text="VCU Student Group Project\nTeam:\nFiraol Ensermu\nAlexander Harris\nDustin Nash\nMcCrae Smith"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
