@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/settingsBackBtn"
-        android:layout_width="58dp"
-        android:layout_height="61dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="Return to main menu button"
@@ -26,6 +26,7 @@
         android:text="SETTINGS"
         android:textAlignment="center"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/settingsBackBtn"
         app:layout_constraintTop_toTopOf="parent" />

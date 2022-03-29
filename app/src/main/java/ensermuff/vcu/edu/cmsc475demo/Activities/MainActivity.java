@@ -57,5 +57,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        ImageButton historyBtn = findViewById(R.id.historyBtn);
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Intent is an action being requested that the device should try to perform
+                Intent startIntent = new Intent(getApplicationContext(), HistoryActivity.class);
+                //startActivity() is used to launch another activity
+                startActivity(startIntent);
+            }
+        });
     }
 }
