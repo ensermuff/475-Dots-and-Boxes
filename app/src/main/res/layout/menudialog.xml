@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/dialog_info"
+        android:id="@+id/dialog_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -13,25 +13,83 @@
         android:textAlignment="center" />
 
     <LinearLayout
-        android:layout_width="424dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/dialog_info">
 
         <Button
-            android:id="@+id/dialog_cancel"
+            android:id="@+id/dialog_sound"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.50"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.5"
             android:background="@color/Red"
-            android:text="Cancel" />
+            android:text="Sound" />
 
         <Button
-            android:id="@+id/dialog_ok"
+            android:id="@+id/dialog_music"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.50"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.5"
             android:background="@color/Green"
-            android:text="Agree" />
+            android:text="music" />
+
+        <Button
+            android:id="@+id/dialog_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.5"
+            android:background="@color/Green"
+            android:text="info" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dialog_info">
+
+        <Button
+            android:id="@+id/dialog_menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.5"
+            android:background="@color/Red"
+            android:text="Menu" />
+
+        <Button
+            android:id="@+id/dialog_reset"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.5"
+            android:background="@color/Green"
+            android:text="reset" />
+
+        <Button
+            android:id="@+id/dialog_resume"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.5"
+            android:background="@color/Green"
+            android:text="resume" />
+
     </LinearLayout>
 
 </LinearLayout>

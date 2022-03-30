@@ -87,8 +87,9 @@ public class GameActivity extends AppCompatActivity {
         //Mention the name of the custom dialog
         menuDialog.setContentView(R.layout.menudialog);
 
-        Button cancelBtn = menuDialog.findViewById(R.id.dialog_cancel);
-        Button okBtn = menuDialog.findViewById(R.id.dialog_ok);
+        Button cancelBtn = menuDialog.findViewById(R.id.dialog_resume);
+        Button okBtn = menuDialog.findViewById(R.id.dialog_menu);
+        Button resetBtn = menuDialog.findViewById(R.id.dialog_reset);
 
         cancelBtn.setOnClickListener((v) ->{
 
@@ -96,6 +97,11 @@ public class GameActivity extends AppCompatActivity {
             onResume();
 
             menuDialog.dismiss();
+        });
+
+        resetBtn.setOnClickListener((v) ->{
+            Intent startIntent = new Intent(getApplicationContext(), GameActivity.class);
+            startActivity(startIntent);
         });
 
         okBtn.setOnClickListener((v) ->{
