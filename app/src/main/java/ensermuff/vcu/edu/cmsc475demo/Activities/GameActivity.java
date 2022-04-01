@@ -55,6 +55,15 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+        Button myUndo = findViewById(R.id.undoTurn);
+        myUndo.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
+
 
         Display display = getWindowManager().getDefaultDisplay();
         //Point screenSize = new Point(1000, 1500); // Entire device screen is x=1440 and y=2701
