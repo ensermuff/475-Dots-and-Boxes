@@ -23,12 +23,13 @@ public class GameView extends View {
     Paint paint = new Paint();
     GameDataModel model;
     String player1, player2;
+    ArrayList<Line> lines;
+    ArrayList<Area> areas;
 
 //    ArrayList<GridPoint> p1 = new ArrayList<>();
 //    ArrayList<GridPoint> p2 = new ArrayList<>();
 //    ArrayList<LINE_TYPE> line_types = new ArrayList<>();
-//    ArrayList<Line> lines = new ArrayList<>();
-//    ArrayList<Area> areas = new ArrayList<>();
+
 
 //    static GridPoint lastPoint;
 //    static GridPoint lasttPoint2;
@@ -47,6 +48,9 @@ public class GameView extends View {
     public GameView(Context context, GameDataModel model) {
         super(context);
         this.model = model;
+
+        lines = new ArrayList<>();
+        areas = new ArrayList<>();
 
         //set game screen to fullscreen, have to cast to Activity since getWindow() doesn't work on a custom view
         View decorView = ((Activity)getContext()).getWindow().getDecorView();
@@ -72,18 +76,48 @@ public class GameView extends View {
 
 
     }
+    //causes th
+    public ArrayList<Line> undo(){
+        int lastLineIndex = lines.size() - 1;
+        lines.remove(lines.size()-1);
+        //postInvalidate() tells the system that the current view has changed and it should be
+        //redrawn as soon as possible
+        postInvalidate();
+        return lines;
+    }
 
     public void onDraw(Canvas canvas) {
+//        for (Area[] myAreas: model.getAreas()){
+//            for(Area area : myAreas){
+//                areas.add(area);
+//                area.draw(canvas);
+//            }
+//        }
+//        for(Area area : areas){
+//            canvas.drawRect(area.getSquare(), area.getPaint());
+//        }
 
         for (Area[] areas : model.getAreas()) {
             for (Area area : areas) {
                 area.draw(canvas);
             }
         }
+        /*
+        try to add areas to the arraylist of type Area
+         */
 
+
+        // adding lines to the arrayList of type Line
         for (Line line : model.getLines()) {
-            line.draw(canvas);
+            lines.add(line);
         }
+        for(int i = 0; i < lines.size(); i++){
+            canvas.drawLine(lines.get(i).getP1().getX(), lines.get(i).getP1().getY() , lines.get(i).getP2().getX(), lines.get(i).getP2().getY(), lines.get(i).getPaint());
+        }
+
+//        for (Line line : model.getLines()) {
+//            line.draw(canvas);
+//        }
 
         //Setting up dots (dots x and y coordinates are set up by 10?)
         for (GridPoint[] p_list : model.getGridPoints()) {

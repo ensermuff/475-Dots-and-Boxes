@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/linearLayout"
+    android:backgroundTint="#0FFFFFFF"
     tools:context=".Activities.GameActivity">
 
 
@@ -12,6 +13,7 @@
         android:id="@+id/undoTurn"
         android:layout_width="200dp"
         android:layout_height="45dp"
+        android:backgroundTint="#A1A7AF"
         android:text="Undo Turn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +27,7 @@
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="31dp"
+        android:backgroundTint="#A1A7AF"
         android:text="Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,11 +37,11 @@
         app:layout_constraintVertical_bias="0.033" />
 
     <!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:id="@+id/linearLayout"-->
-<!--        tools:ignore="MissingConstraints" />-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:id="@+id/linearLayout"-->
+    <!--        tools:ignore="MissingConstraints" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

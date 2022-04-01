@@ -20,7 +20,7 @@
         <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.2015" />
         <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/drawable/box.xml" value="0.104" />
         <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/drawable/popup_background.xml" value="0.1" />
-        <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/layout/activity_game.xml" value="0.22" />
+        <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/layout/activity_game.xml" value="0.1" />
         <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/layout/activity_information.xml" value="0.1762917933130699" />
         <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/firao/AndroidStudioProjects/CMSC475Demo/app/src/main/res/layout/menudialog.xml" value="0.25" />
@@ -43,5 +43,12 @@
   </component>
   <component name="SuppressionsComponent">
     <option name="suppComments" value="[]" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

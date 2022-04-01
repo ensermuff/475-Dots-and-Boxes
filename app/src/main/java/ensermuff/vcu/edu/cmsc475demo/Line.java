@@ -24,6 +24,7 @@ public class Line {
         this.bounds = new Rect();
         paint = new Paint();
         paint.setColor(Color.WHITE);
+        paint.setStrokeWidth(20);
     }
 
     public GridPoint getP1() {
@@ -54,10 +55,10 @@ public class Line {
         return line_type;
     }
 
-    public void draw(Canvas canvas) {
-        bounds.set(p1.getX() - WIDTH / 2, p1.getY() - WIDTH / 2, p2.getX() + WIDTH / 2, p2.getY() + WIDTH / 2);
-        canvas.drawRect(bounds, paint);
-    }
+//    public void draw(Canvas canvas) {
+//        bounds.set(p1.getX() - WIDTH / 2, p1.getY() - WIDTH / 2, p2.getX() + WIDTH / 2, p2.getY() + WIDTH / 2);
+//        canvas.drawRect(bounds, paint);
+//    }
 
     public GridPoint getCenter() {
         return new GridPoint((getP1().getX() + getP2().getX()) / 2, (getP1().getY() + getP2().getY()) / 2);

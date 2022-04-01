@@ -57,10 +57,10 @@ public class GameActivity extends AppCompatActivity {
 
         Button myUndo = findViewById(R.id.undoTurn);
         myUndo.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
-                
+                GameView myView = new GameView(getApplicationContext(), model);
+                myView.undo();
             }
         });
 
