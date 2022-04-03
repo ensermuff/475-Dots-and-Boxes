@@ -22,6 +22,7 @@ public class GameActivity extends AppCompatActivity {
 
     public static String player1 = "player1";
     public static String player2 = "player2";
+    public static boolean infoGame = true;
     GameView view;
     GameDataModel model;
     Intent intent;
@@ -96,10 +97,17 @@ public class GameActivity extends AppCompatActivity {
         //Mention the name of the custom dialog
         menuDialog.setContentView(R.layout.menudialog);
 
+        Button infoBtn = menuDialog.findViewById(R.id.dialog_info);
         Button cancelBtn = menuDialog.findViewById(R.id.dialog_resume);
-        Button okBtn = menuDialog.findViewById(R.id.dialog_menu);
+        Button menuBtn = menuDialog.findViewById(R.id.dialog_menu);
         Button resetBtn = menuDialog.findViewById(R.id.dialog_reset);
 
+        infoBtn.setOnClickListener((v) ->{
+            infoGame = false;
+            Intent startIntent = new Intent(getApplicationContext(), InformationActivity.class);
+            startActivity(startIntent);
+            //openInfoDialog();
+        });
         cancelBtn.setOnClickListener((v) ->{
 
             //Resume song
@@ -113,7 +121,8 @@ public class GameActivity extends AppCompatActivity {
             startActivity(startIntent);
         });
 
-        okBtn.setOnClickListener((v) ->{
+        menuBtn.setOnClickListener((v) ->{
+            infoGame = true;
             Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(startIntent);
             //Stop song
@@ -121,8 +130,23 @@ public class GameActivity extends AppCompatActivity {
         });
 
         menuDialog.show();
-
-
     }
+    /*public void openInfoDialog(){
+        final Dialog menuDialog = new Dialog(GameActivity.this);
+        //added custom view to dialog with no title
+        menuDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        menuDialog.setCancelable(false);
+        //Mention the name of the custom dialog
+        menuDialog.setContentView(R.layout.activity_information);
+
+        Button infoBtn = menuDialog.findViewById(R.id.returnBtn);
+
+        infoBtn.setOnClickListener((v) ->{
+            menuDialog.dismiss();
+        });
+
+        menuDialog.show();
+    }*/
 
 }

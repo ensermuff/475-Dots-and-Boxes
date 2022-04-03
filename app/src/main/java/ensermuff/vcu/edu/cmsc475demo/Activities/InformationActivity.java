@@ -20,9 +20,14 @@ public class InformationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Intent is an action being requested that the device should try to perform
-                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-                //startActivity() is used to launch another activity
-                startActivity(startIntent);
+                if(GameActivity.infoGame) {
+                    Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(startIntent);
+                }
+                else if(!GameActivity.infoGame) {
+                    Intent startIntent = new Intent(getApplicationContext(), GameActivity.class);
+                    startActivity(startIntent);
+                }
             }
         });
     }
