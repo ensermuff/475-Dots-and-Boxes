@@ -27,6 +27,7 @@ public class GameActivity extends AppCompatActivity {
     GameDataModel model;
     Intent intent;
     MediaPlayer mySongs;
+    ConstraintLayout myView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +60,9 @@ public class GameActivity extends AppCompatActivity {
         Button myUndo = findViewById(R.id.undoTurn);
         myUndo.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                GameView myView = new GameView(getApplicationContext(), model);
-                myView.undo();
+            public void onClick(View view2) {
+                view.undo();
+                // redraw the canvas over again with the arrayList of type line and arrayList of type area
             }
         });
 
@@ -74,7 +75,7 @@ public class GameActivity extends AppCompatActivity {
         model = new GameDataModel(screenSize);
         view = new GameView(this, model);
         // setContentView(view);
-        ConstraintLayout myView = (ConstraintLayout) findViewById(R.id.linearLayout);
+        myView = (ConstraintLayout) findViewById(R.id.linearLayout);
         myView.addView(view);
 //        LinearLayout v = (LinearLayout) findViewById(R.id.linearLayout);
 //        v.addView(view);

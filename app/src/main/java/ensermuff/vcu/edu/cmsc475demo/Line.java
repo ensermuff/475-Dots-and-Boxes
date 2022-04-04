@@ -23,7 +23,7 @@ public class Line {
 
         this.bounds = new Rect();
         paint = new Paint();
-        paint.setColor(Color.WHITE);
+        paint.setColor(Color.LTGRAY);
         paint.setStrokeWidth(20);
     }
 
@@ -41,6 +41,10 @@ public class Line {
 
     public void setDraw(boolean draw) {
         isDraw = draw;
+    }
+
+    public void setPaint(Paint paint) {
+        this.paint = paint;
     }
 
     public Paint getPaint() {
