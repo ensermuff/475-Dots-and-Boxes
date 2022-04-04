@@ -25,6 +25,7 @@ public class GameView extends View {
     String player1, player2;
     ArrayList<Line> lines;
     ArrayList<Area> areas;
+    Line lastLine;
 
 //    ArrayList<GridPoint> p1 = new ArrayList<>();
 //    ArrayList<GridPoint> p2 = new ArrayList<>();
@@ -76,23 +77,36 @@ public class GameView extends View {
 
 
     }
-    //causes th
-    public ArrayList<Line> undo(){
+    public GameDataModel getModel(){
+        return model;
+    }
+
+    // doesn't work yet
+    public void undo(){
         int lastLineIndex = lines.size() - 1;
-        lines.remove(lines.size()-1);
-        //postInvalidate() tells the system that the current view has changed and it should be
-        //redrawn as soon as possible
-        postInvalidate();
-        return lines;
+        for (Line line : model.getLines()){
+            if (line == lines.get(lastLineIndex)){
+                Paint myPaint = new Paint();
+                myPaint.setColor(Color.LTGRAY);
+                lines.remove(lastLineIndex);
+                line.setColor("lightGrey");
+                invalidate(); //redraw
+            }
+        }
+//        if (lastLine == lines.get(lastLineIndex)){
+//            lines.remove(lastLineIndex);
+//        }
+//        //change the line color back to light gray
+//        Paint myPaint = new Paint();
+//        myPaint.setColor(Color.LTGRAY);
+//        lines.get(lastLineIndex).setPaint(myPaint);
+//        //postInvalidate() tells the system that the current view has changed and it should be
+//        //redrawn as soon as possible
+//        postInvalidate();
+//        return lines;
     }
 
     public void onDraw(Canvas canvas) {
-//        for (Area[] myAreas: model.getAreas()){
-//            for(Area area : myAreas){
-//                areas.add(area);
-//                area.draw(canvas);
-//            }
-//        }
 //        for(Area area : areas){
 //            canvas.drawRect(area.getSquare(), area.getPaint());
 //        }
@@ -105,14 +119,37 @@ public class GameView extends View {
         /*
         try to add areas to the arraylist of type Area
          */
+//        Area myArea = new Area();
+//        if (myArea.getOwner() == 0)
+//            paint.setColor(Color.WHITE);
+//        else if (myArea.getOwner() == 1)
+//            paint.setColor(Color.RED);
+//        else if (myArea.getOwner() == 2)
+//            paint.setColor(Color.BLUE);
+//
+//        for (Area[] myAreas: model.getAreas()){
+//            for(Area area : myAreas){
+//                areas.add(area);
+////                area.draw(canvas);
+//            }
+//        }
+//        for(int i = 0; i < areas.size(); i++){
+//            canvas.drawRect(areas.get(i).getCenter().getX() - GameDataModel.getLENGTH(),
+//                    areas.get(i).getCenter().getY() - GameDataModel.getLENGTH(),
+//                    areas.get(i).getCenter().getX() + GameDataModel.getLENGTH(),
+//                    areas.get(i).getCenter().getY() + GameDataModel.getLENGTH(),
+//                    areas.get(i).getPaint());
+//        }
 
 
         // adding lines to the arrayList of type Line
         for (Line line : model.getLines()) {
             lines.add(line);
         }
+        lastLine = lines.get(lines.size()-1);
         for(int i = 0; i < lines.size(); i++){
-            canvas.drawLine(lines.get(i).getP1().getX(), lines.get(i).getP1().getY() , lines.get(i).getP2().getX(), lines.get(i).getP2().getY(), lines.get(i).getPaint());
+            canvas.drawLine(lines.get(i).getP1().getX(), lines.get(i).getP1().getY(),
+                    lines.get(i).getP2().getX(), lines.get(i).getP2().getY(), lines.get(i).getPaint());
         }
 
 //        for (Line line : model.getLines()) {
@@ -185,7 +222,6 @@ public class GameView extends View {
                 case MotionEvent.ACTION_DOWN:
                     for (Line line : model.getLines()) {
                         touchLine = line;
-
                         if (line.getLINE_TYPE() == LINE_TYPE.HORIZONTAL) {
                             if (currentX > line.getP1().getX() && currentX < line.getP2().getX()
                                     && currentY > line.getP1().getY() - Line.WIDTH && currentY < line.getP2().getY() + Line.WIDTH) {
