@@ -68,8 +68,7 @@
                 android:id="@+id/playBtn"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="#F44336"
-                app:srcCompat="@drawable/ic_play" />
+                android:background="@drawable/gameplayscreenbutton" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -80,8 +79,7 @@
                 android:id="@+id/settingsBtn"
                 android:layout_width="102dp"
                 android:layout_height="match_parent"
-                android:background="#0B8DE3"
-                app:srcCompat="@drawable/ic_settings" />
+                android:background="@drawable/settingscreenbutton" />
         </LinearLayout>
 
         <Space
@@ -98,8 +96,7 @@
                 android:id="@+id/historyBtn"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="#6F2ADD"
-                app:srcCompat="@drawable/ic_history" />
+                android:background="@drawable/histroyscreenbutton" />
 
             <Space
                 android:layout_width="match_parent"
@@ -110,8 +107,7 @@
                 android:id="@+id/infoBtn"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="#13CCBA"
-                app:srcCompat="@drawable/ic_info" />
+                android:background="@drawable/informationscreenbutton" />
         </LinearLayout>
     </LinearLayout>
 
