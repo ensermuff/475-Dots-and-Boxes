@@ -1,11 +1,12 @@
 package ensermuff.vcu.edu.cmsc475demo;
 
+import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-;
+;import androidx.core.content.ContextCompat;
 
 public class Line {
     static int WIDTH = 25;

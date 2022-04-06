@@ -17,6 +17,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import ensermuff.vcu.edu.cmsc475demo.Activities.GameActivity;
+import ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity;
 
 public class GameView extends View {
 
@@ -26,6 +27,8 @@ public class GameView extends View {
     ArrayList<Line> lines;
     ArrayList<Area> areas;
     Line lastLine;
+    String player1Color = SettingsActivity.player1Color;
+    String player2Color = SettingsActivity.player2Color;
 
 //    ArrayList<GridPoint> p1 = new ArrayList<>();
 //    ArrayList<GridPoint> p2 = new ArrayList<>();
@@ -232,7 +235,8 @@ public class GameView extends View {
                                 //Player 1 RED and Player 2 BLUE
                                 //Checking the Horizontal Lines
                                 if(model.getTurn() % 2 == 0){
-                                    line.getPaint().setColor(Color.RED);
+                                    //line.getPaint().setColor(Color.RED);
+                                    line.getPaint().setColor(Color.parseColor(player1Color));
                                 }else {
                                     line.getPaint().setColor(Color.BLUE);
 
@@ -268,7 +272,7 @@ public class GameView extends View {
                                 //Player 1 RED and Player 2 BLUE
                                 //Checking the Vertical lines
                                 if (model.getTurn() % 2 == 0) {
-                                    line.getPaint().setColor(Color.RED);
+                                    line.getPaint().setColor(Color.parseColor(player1Color));
 
                                 }else {
                                     line.getPaint().setColor(Color.BLUE);
