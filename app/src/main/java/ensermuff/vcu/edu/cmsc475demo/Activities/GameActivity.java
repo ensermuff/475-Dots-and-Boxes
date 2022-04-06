@@ -62,7 +62,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view2) {
                 view.undo();
-                // redraw the canvas over again with the arrayList of type line and arrayList of type area
+                // redraw the canvas over again with the updated arrayList of type line and updated arrayList of type area
             }
         });
 
