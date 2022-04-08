@@ -10,6 +10,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -28,7 +29,6 @@ public class GameActivity extends AppCompatActivity {
     Intent intent;
     MediaPlayer mySongs;
     ConstraintLayout myView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -48,11 +48,6 @@ public class GameActivity extends AppCompatActivity {
         myMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mySongs.isPlaying()){
-                    mySongs.pause();
-                }else{
-                    mySongs.start();
-                }
                 openDialog();
             }
         });
@@ -102,6 +97,9 @@ public class GameActivity extends AppCompatActivity {
         Button cancelBtn = menuDialog.findViewById(R.id.dialog_resume);
         Button menuBtn = menuDialog.findViewById(R.id.dialog_menu);
         Button resetBtn = menuDialog.findViewById(R.id.dialog_reset);
+        ImageButton musicBtn = menuDialog.findViewById(R.id.imageButton);
+        ImageButton soundBtn = menuDialog.findViewById(R.id.dialog_sound);
+
 
         infoBtn.setOnClickListener((v) ->{
             infoGame = false;
@@ -110,16 +108,35 @@ public class GameActivity extends AppCompatActivity {
             //openInfoDialog();
         });
         cancelBtn.setOnClickListener((v) ->{
-
             //Resume song
             onResume();
-
             menuDialog.dismiss();
         });
 
         resetBtn.setOnClickListener((v) ->{
             Intent startIntent = new Intent(getApplicationContext(), GameActivity.class);
             startActivity(startIntent);
+        });
+        musicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Song is playing by default
+                if(mySongs.isPlaying()) {
+                    //Stops song
+                    mySongs.pause();
+                    musicBtn.setImageResource(R.drawable.music_off);
+                }else{
+                    //Resumes song
+                    mySongs.start();
+                    musicBtn.setImageResource(R.drawable.music_on);
+                }
+            }
+        });
+        soundBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
         });
 
         menuBtn.setOnClickListener((v) ->{
