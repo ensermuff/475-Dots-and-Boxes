@@ -168,10 +168,10 @@ public class GameView extends View {
         }
 
         //Rectangles for background of text
-        paint.setColor(Color.RED);
+        paint.setColor(Color.parseColor(player1Color));
         canvas.drawRect(0,0,700,200, paint);
 
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.parseColor(player2Color));
         canvas.drawRect(740,0,1440,200, paint);
 
 
@@ -193,9 +193,9 @@ public class GameView extends View {
         paint.setTextSize((int) (getWidth() / 10 * 1.2));
         if (!model.checkGameOver()) {
             if (model.getTurn() % 2 == 0)
-                paint.setColor(Color.RED);
+                paint.setColor(Color.parseColor(player1Color));
             else
-                paint.setColor(Color.BLUE);
+                paint.setColor(Color.parseColor(player2Color));
             canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
         } else {
             paint.setColor(Color.RED);
@@ -238,7 +238,7 @@ public class GameView extends View {
                                     //line.getPaint().setColor(Color.RED);
                                     line.getPaint().setColor(Color.parseColor(player1Color));
                                 }else {
-                                    line.getPaint().setColor(Color.BLUE);
+                                    line.getPaint().setColor(Color.parseColor(player2Color));
 
                                 }
 //                                lastPoint = line.getP1();
@@ -275,7 +275,7 @@ public class GameView extends View {
                                     line.getPaint().setColor(Color.parseColor(player1Color));
 
                                 }else {
-                                    line.getPaint().setColor(Color.BLUE);
+                                    line.getPaint().setColor(Color.parseColor(player2Color));
 
                                 }
 

@@ -7,12 +7,16 @@ import android.graphics.Rect;
 
 import java.util.ArrayList;
 
+import ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity;
+
 public class Area {
     private boolean isOccupied;
     private int owner;
     private Rect square;
     private Paint paint;
     private ArrayList<Line> neighborLines;
+    String player1Color = SettingsActivity.player1Color;
+    String player2Color = SettingsActivity.player2Color;
 
     public Area() {
         this.isOccupied = false;
@@ -69,9 +73,9 @@ public class Area {
         if (getOwner() == 0)
             paint.setColor(Color.WHITE);
         else if (getOwner() == 1)
-            paint.setColor(Color.RED);
+            paint.setColor(Color.parseColor(player1Color));
         else if (getOwner() == 2)
-            paint.setColor(Color.BLUE);
+            paint.setColor(Color.parseColor(player2Color));
 
         //Setting up squares and colors
         square.set(getCenter().getX() - GameDataModel.getLENGTH() / 3, getCenter().getY() - GameDataModel.getLENGTH() / 3,

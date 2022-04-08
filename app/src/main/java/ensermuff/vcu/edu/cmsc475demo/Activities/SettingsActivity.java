@@ -48,5 +48,15 @@ public class SettingsActivity extends AppCompatActivity {
             player1Color = "#00abff";
         });
 
+        Button p2RedBtn = findViewById(R.id.p2RedBtn);
+        p2RedBtn.setOnClickListener((v) ->{
+            player2Color = "#fc4e42";
+        });
+
+        Button p2BlueBtn = findViewById(R.id.p2BlueBtn);
+        p2BlueBtn.setOnClickListener((v) ->{
+            player2Color = "#00abff";
+        });
+
     }
 }
