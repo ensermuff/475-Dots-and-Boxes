@@ -6,14 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/dialog_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/dialog_title"
-        android:textAlignment="center" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,6 +15,7 @@
             android:id="@+id/dialog_sound"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
@@ -36,6 +29,7 @@
             android:id="@+id/dialog_music"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
@@ -44,36 +38,39 @@
             android:scaleType="fitXY"
             app:srcCompat="@drawable/music_on" />
 
-        <Button
+        <ImageButton
             android:id="@+id/dialog_info"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
-            android:background="@color/Green"
-            android:text="info" />
+            android:background="#D97E7E"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/info" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:layout_below="@id/dialog_info">
 
-        <Button
-            android:id="@+id/dialog_menu"
+        <ImageButton
+            android:id="@+id/dialog_home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
-            android:background="@color/Red"
-            android:text="Menu" />
+            android:background="#D97E7E"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/home" />
 
-        <Button
+        <ImageButton
             android:id="@+id/dialog_reset"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -81,10 +78,11 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
-            android:background="@color/Green"
-            android:text="reset" />
+            android:background="#D97E7E"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/reset" />
 
-        <Button
+        <ImageButton
             android:id="@+id/dialog_resume"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -92,8 +90,9 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
-            android:background="@color/Green"
-            android:text="resum" />
+            android:background="#D97E7E"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/resume" />
 
     </LinearLayout>
 

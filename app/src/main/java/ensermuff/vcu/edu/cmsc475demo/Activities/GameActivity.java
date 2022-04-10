@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -94,10 +93,10 @@ public class GameActivity extends AppCompatActivity {
         //Mention the name of the custom dialog
         menuDialog.setContentView(R.layout.menudialog);
 
-        Button infoBtn = menuDialog.findViewById(R.id.dialog_info);
-        Button cancelBtn = menuDialog.findViewById(R.id.dialog_resume);
-        Button menuBtn = menuDialog.findViewById(R.id.dialog_menu);
-        Button resetBtn = menuDialog.findViewById(R.id.dialog_reset);
+        ImageButton infoBtn = menuDialog.findViewById(R.id.dialog_info);
+        ImageButton resumeBtn = menuDialog.findViewById(R.id.dialog_resume);
+        ImageButton menuBtn = menuDialog.findViewById(R.id.dialog_home);
+        ImageButton resetBtn = menuDialog.findViewById(R.id.dialog_reset);
         ImageButton musicBtn = menuDialog.findViewById(R.id.dialog_music);
         if(!mySongs.isPlaying()){
             musicBtn.setImageResource(R.drawable.music_off);
@@ -107,20 +106,22 @@ public class GameActivity extends AppCompatActivity {
 
         infoBtn.setOnClickListener((v) ->{
             infoGame = false;
-            //finish command... goes back to previous game?
             Intent startIntent = new Intent(getApplicationContext(), InformationActivity.class);
             startActivity(startIntent);
+            mySongs.pause();
+            //finish command destroys the current activity (in this case the GameActivity)
+            finish();
             //openInfoDialog();
         });
-        cancelBtn.setOnClickListener((v) ->{
-            //Resume song
-            onResume();
+        resumeBtn.setOnClickListener((v) ->{
             menuDialog.dismiss();
         });
 
         resetBtn.setOnClickListener((v) ->{
             Intent startIntent = new Intent(getApplicationContext(), GameActivity.class);
+            mySongs.stop();
             startActivity(startIntent);
+
         });
         musicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
