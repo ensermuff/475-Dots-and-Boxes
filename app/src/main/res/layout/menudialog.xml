@@ -27,18 +27,22 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
+            android:background="#D97E7E"
+            android:scaleType="fitXY"
             app:srcCompat="@drawable/sound_on" />
 
+
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/dialog_music"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
+            android:background="#D97E7E"
+            android:scaleType="fitXY"
             app:srcCompat="@drawable/music_on" />
-
 
         <Button
             android:id="@+id/dialog_info"

@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -97,12 +98,16 @@ public class GameActivity extends AppCompatActivity {
         Button cancelBtn = menuDialog.findViewById(R.id.dialog_resume);
         Button menuBtn = menuDialog.findViewById(R.id.dialog_menu);
         Button resetBtn = menuDialog.findViewById(R.id.dialog_reset);
-        ImageButton musicBtn = menuDialog.findViewById(R.id.imageButton);
+        ImageButton musicBtn = menuDialog.findViewById(R.id.dialog_music);
+        if(!mySongs.isPlaying()){
+            musicBtn.setImageResource(R.drawable.music_off);
+        }
         ImageButton soundBtn = menuDialog.findViewById(R.id.dialog_sound);
 
 
         infoBtn.setOnClickListener((v) ->{
             infoGame = false;
+            //finish command... goes back to previous game?
             Intent startIntent = new Intent(getApplicationContext(), InformationActivity.class);
             startActivity(startIntent);
             //openInfoDialog();
