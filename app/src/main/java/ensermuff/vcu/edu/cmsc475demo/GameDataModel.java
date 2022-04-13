@@ -1,12 +1,16 @@
 package ensermuff.vcu.edu.cmsc475demo;
 
+import static ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity.gridSet;
+
 import android.graphics.Point;
 import android.util.Log;
 
 import java.util.ArrayList;
 
+import ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity;
+
 public class GameDataModel {
-    public static final int GRID = 5;
+    static int GRID = gridSet;
     public static int turn;
     public static boolean isGameOver, isDrawGame, isBack;
     private static ArrayList<Line> lines;
@@ -15,11 +19,11 @@ public class GameDataModel {
     private static int xMin;
     private static int yMin;
     private static int LENGTH;
-    private GridPoint[][] gridPoints;
+    private static GridPoint[][] gridPoints;
 
     public GameDataModel(Point screenSize) {
         setGridSize(screenSize);
-        init();
+        init(gridSet);
     }
 
     public static Player getNowPlayer() {
@@ -125,10 +129,11 @@ public class GameDataModel {
         LENGTH = screenSize.x / 6;
     }
 
-    public void init() {
+    public static void init(int setGrid) {
+        setGrid = gridSet;
         players = new Player[2];
-        gridPoints = new GridPoint[GRID + 1][GRID + 1];
-        areas = new Area[GRID][GRID];
+        gridPoints = new GridPoint[setGrid + 1][setGrid + 1];
+        areas = new Area[setGrid][setGrid];
         lines = new ArrayList<>();
         turn = 0;
         isGameOver = isDrawGame = isBack = false;
@@ -138,41 +143,41 @@ public class GameDataModel {
             players[i] = new Player();
 
         // gridPoints Initialize
-        for (int x = 0; x < GRID + 1; x++) {
-            for (int y = 0; y < GRID + 1; y++) {
+        for (int x = 0; x < setGrid + 1; x++) {
+            for (int y = 0; y < setGrid + 1; y++) {
                 gridPoints[x][y] = new GridPoint(xMin + x * LENGTH, yMin + y * LENGTH);
             }
         }
 
         // areas Initialize
-        for (int x = 0; x < GRID; x++) {
-            for (int y = 0; y < GRID; y++) {
+        for (int x = 0; x < setGrid; x++) {
+            for (int y = 0; y < setGrid; y++) {
                 areas[x][y] = new Area();
             }
         }
 
         // Line Initialize
         Line tmp_line;
-        for (int x = 0; x < GRID; x++) {
-            for (int y = 0; y < GRID + 1; y++) {
+        for (int x = 0; x < setGrid; x++) {
+            for (int y = 0; y < setGrid + 1; y++) {
                 tmp_line = new Line(gridPoints[x][y], gridPoints[x + 1][y], LINE_TYPE.HORIZONTAL);
                 lines.add(tmp_line);
 
                 if (y > 0)
                     areas[x][y - 1].addNeighborLine(tmp_line);
-                if (y < GRID)
+                if (y < setGrid)
                     areas[x][y].addNeighborLine(tmp_line);
 
             }
         }
-        for (int y = 0; y < GRID; y++) {
-            for (int x = 0; x < GRID + 1; x++) {
+        for (int y = 0; y < setGrid; y++) {
+            for (int x = 0; x < setGrid + 1; x++) {
                 tmp_line = new Line(gridPoints[x][y], gridPoints[x][y + 1], LINE_TYPE.VERTICAL);
                 lines.add(tmp_line);
 
                 if (x > 0)
                     areas[x - 1][y].addNeighborLine(tmp_line);
-                if (x < GRID) {
+                if (x < setGrid) {
                     areas[x][y].addNeighborLine(tmp_line);
                 }
             }

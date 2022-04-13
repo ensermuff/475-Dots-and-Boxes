@@ -306,7 +306,7 @@ public class GameView extends View {
         } else {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    model.init();
+                    model.init(SettingsActivity.gridSet);
                     invalidate();
                     break;
             }

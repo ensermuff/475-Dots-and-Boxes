@@ -11,12 +11,14 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
+import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
 import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
     public static String player1Color = "#fc4e42";;
     public static String player2Color = "#00abff";
+    public static int gridSet = 5;
 
 
     @Override
@@ -38,6 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        //Sets the value of the player colors
         Button p1RedBtn = findViewById(R.id.p1RedBtn);
         p1RedBtn.setOnClickListener((v) ->{
             player1Color = "#fc4e42";
@@ -56,6 +59,25 @@ public class SettingsActivity extends AppCompatActivity {
         Button p2BlueBtn = findViewById(R.id.p2BlueBtn);
         p2BlueBtn.setOnClickListener((v) ->{
             player2Color = "#00abff";
+        });
+
+        //Sets the value of the grid
+        Button grid6x6 = findViewById(R.id.btn6x6);
+        grid6x6.setOnClickListener((v) ->{
+            gridSet = 5;
+            GameDataModel.init(gridSet);
+        });
+
+        Button grid5x5 = findViewById(R.id.btn5x5);
+        grid5x5.setOnClickListener((v) ->{
+            gridSet = 4;
+            GameDataModel.init(gridSet);
+        });
+
+        Button grid4x4 = findViewById(R.id.btn4x4);
+        grid4x4.setOnClickListener((v) ->{
+            gridSet = 3;
+            GameDataModel.init(gridSet);
         });
 
     }
