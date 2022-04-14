@@ -93,6 +93,7 @@ public class GameView extends View {
                 myPaint.setColor(Color.LTGRAY);
                 lines.remove(lastLineIndex);
                 line.setColor("lightGrey");
+                //model.init();
                 invalidate(); //redraw
             }
         }
@@ -306,7 +307,7 @@ public class GameView extends View {
         } else {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    model.init(SettingsActivity.gridSet);
+                    model.init();
                     invalidate();
                     break;
             }

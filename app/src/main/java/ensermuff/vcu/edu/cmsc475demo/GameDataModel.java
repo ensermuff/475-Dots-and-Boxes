@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity;
 
 public class GameDataModel {
-    static int GRID = gridSet;
+    public static int GRID = 5;
     public static int turn;
     public static boolean isGameOver, isDrawGame, isBack;
     private static ArrayList<Line> lines;
@@ -23,7 +23,7 @@ public class GameDataModel {
 
     public GameDataModel(Point screenSize) {
         setGridSize(screenSize);
-        init(gridSet);
+        init();
     }
 
     public static Player getNowPlayer() {
@@ -129,8 +129,9 @@ public class GameDataModel {
         LENGTH = screenSize.x / 6;
     }
 
-    public static void init(int setGrid) {
-        setGrid = gridSet;
+    public static void init() {
+        //setGrid = gridSet;
+        int setGrid = GRID;
         players = new Player[2];
         gridPoints = new GridPoint[setGrid + 1][setGrid + 1];
         areas = new Area[setGrid][setGrid];

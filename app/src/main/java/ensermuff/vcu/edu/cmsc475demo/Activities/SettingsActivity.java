@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
+import ensermuff.vcu.edu.cmsc475demo.GameView;
 import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static String player1Color = "#fc4e42";;
     public static String player2Color = "#00abff";
     public static int gridSet = 5;
+    GameView view;
 
 
     @Override
@@ -65,19 +67,19 @@ public class SettingsActivity extends AppCompatActivity {
         Button grid6x6 = findViewById(R.id.btn6x6);
         grid6x6.setOnClickListener((v) ->{
             gridSet = 5;
-            GameDataModel.init(gridSet);
+            GameDataModel.GRID = gridSet;
         });
 
         Button grid5x5 = findViewById(R.id.btn5x5);
         grid5x5.setOnClickListener((v) ->{
             gridSet = 4;
-            GameDataModel.init(gridSet);
+            GameDataModel.GRID = gridSet;
         });
 
         Button grid4x4 = findViewById(R.id.btn4x4);
         grid4x4.setOnClickListener((v) ->{
             gridSet = 3;
-            GameDataModel.init(gridSet);
+            GameDataModel.GRID = gridSet;
         });
 
     }
