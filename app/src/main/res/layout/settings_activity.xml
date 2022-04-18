@@ -68,19 +68,92 @@
                 android:orientation="horizontal"
                 tools:ignore="MissingConstraints">
 
-                <Button
+                <ImageButton
                     android:id="@+id/p1RedBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Red" />
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/red"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
-                <Button
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
                     android:id="@+id/p1BlueBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Blue" />
+                    app:srcCompat="@drawable/blue"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p1GreenBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/green"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p1LightBlueBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/lightblue"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p1PurpleBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/purple"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p1OrangeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/orange"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p1BrownBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/brown"
+                    tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
         </LinearLayout>
 
@@ -117,19 +190,92 @@
                 android:orientation="horizontal"
                 tools:ignore="MissingConstraints">
 
-                <Button
+                <ImageButton
                     android:id="@+id/p2RedBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Red" />
+                    android:minWidth="48dp"
+                    app:srcCompat="@drawable/red"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
-                <Button
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
                     android:id="@+id/p2BlueBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Blue" />
+                    app:srcCompat="@drawable/blue"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p2GreenBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/green"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p2LightBlueBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/lightblue"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p2PurpleBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/purple"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p2OrangeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/orange"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/p2BrownBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/brown"
+                    tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
         </LinearLayout>
 

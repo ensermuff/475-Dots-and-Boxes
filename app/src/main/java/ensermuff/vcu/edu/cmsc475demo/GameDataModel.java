@@ -18,7 +18,7 @@ public class GameDataModel {
     private static Player[] players;
     private static int xMin;
     private static int yMin;
-    private static int LENGTH;
+    public static int LENGTH;
     private static GridPoint[][] gridPoints;
 
     public GameDataModel(Point screenSize) {

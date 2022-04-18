@@ -42,25 +42,76 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        //Sets the value of the player colors
-        Button p1RedBtn = findViewById(R.id.p1RedBtn);
+        //Sets the value of the player1 colors
+        ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
         p1RedBtn.setOnClickListener((v) ->{
-            player1Color = "#fc4e42";
+            player1Color = "#E91414";
         });
 
-        Button p1BlueBtn = findViewById(R.id.p1BlueBtn);
+        ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
         p1BlueBtn.setOnClickListener((v) ->{
-            player1Color = "#00abff";
+            player1Color = "#1443E9";
         });
 
-        Button p2RedBtn = findViewById(R.id.p2RedBtn);
+        ImageButton p1GreenBtn = findViewById(R.id.p1GreenBtn);
+        p1GreenBtn.setOnClickListener((v) ->{
+            player1Color = "#32E914";
+        });
+
+        ImageButton p1LightBBtn = findViewById(R.id.p1LightBlueBtn);
+        p1LightBBtn.setOnClickListener((v) ->{
+            player1Color = "#14DCE9";
+        });
+
+        ImageButton p1PurpleBtn = findViewById(R.id.p1PurpleBtn);
+        p1PurpleBtn.setOnClickListener((v) ->{
+            player1Color = "#CB14E9";
+        });
+
+        ImageButton p1OrangeBtn = findViewById(R.id.p1OrangeBtn);
+        p1OrangeBtn.setOnClickListener((v) ->{
+            player1Color = "#E96E14";
+        });
+
+        ImageButton p1BrownBtn = findViewById(R.id.p1BrownBtn);
+        p1BrownBtn.setOnClickListener((v) ->{
+            player1Color = "#932B2B";
+        });
+
+        //Sets the value of the player1 colors
+        ImageButton p2RedBtn = findViewById(R.id.p2RedBtn);
         p2RedBtn.setOnClickListener((v) ->{
-            player2Color = "#fc4e42";
+            player2Color = "#E91414";
         });
 
-        Button p2BlueBtn = findViewById(R.id.p2BlueBtn);
+        ImageButton p2BlueBtn = findViewById(R.id.p2BlueBtn);
         p2BlueBtn.setOnClickListener((v) ->{
-            player2Color = "#00abff";
+            player2Color = "#1443E9";
+        });
+
+        ImageButton p2GreenBtn = findViewById(R.id.p2GreenBtn);
+        p2GreenBtn.setOnClickListener((v) ->{
+            player2Color = "#32E914";
+        });
+
+        ImageButton p2LightBBtn = findViewById(R.id.p2LightBlueBtn);
+        p2LightBBtn.setOnClickListener((v) ->{
+            player2Color = "#14DCE9";
+        });
+
+        ImageButton p2PurpleBtn = findViewById(R.id.p2PurpleBtn);
+        p2PurpleBtn.setOnClickListener((v) ->{
+            player2Color = "#CB14E9";
+        });
+
+        ImageButton p2OrangeBtn = findViewById(R.id.p2OrangeBtn);
+        p2OrangeBtn.setOnClickListener((v) ->{
+            player2Color = "#E96E14";
+        });
+
+        ImageButton p2BrownBtn = findViewById(R.id.p2BrownBtn);
+        p2BrownBtn.setOnClickListener((v) ->{
+            player2Color = "#932B2B";
         });
 
         //Sets the value of the grid

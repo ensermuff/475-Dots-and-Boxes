@@ -50,7 +50,7 @@ public class DotsAndBoxesTest {
 
     //Testing isDrawGame is set to true or false.
     @Test
-    public void isOccupiedTest() {
+    public void isDrawGameTest() {
         GameDataModel.isDrawGame = true;
         assertTrue(GameDataModel.isDrawGame);
 
@@ -59,12 +59,18 @@ public class DotsAndBoxesTest {
 
         Area[][] testAreas = GameDataModel.areas;
         assertEquals(testAreas, testAreas);
+    }
 
-        /*GridPoint myGridPoint = new GridPoint(2,5);
-        GridPoint myGridPoint2 = new GridPoint(200,700);
+    //This checks to see if area is occupied
+    @Test
+    public void isOccupiedTest(){
+        GridPoint myGridPoint = new GridPoint(10,10);
+        GridPoint myGridPoint2 = new GridPoint(10,15);
 
         Line line = new Line(myGridPoint, myGridPoint2, LINE_TYPE.HORIZONTAL);
+        GameDataModel.init();
+        GameDataModel.LENGTH = 5;
 
-        assertEquals(false, GameDataModel.checkArea(line));*/
+        assertEquals(false, GameDataModel.checkArea(line));
     }
 }
