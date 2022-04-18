@@ -185,9 +185,47 @@ public class GameDataModel {
         }
         playerLog();
     }
-
-    public Player[] getPlayers() {
+    public static Player[] getPlayers() {
         return players;
+    }
+    public static void init2(Area[][] myAreas, ArrayList<Line> myLines, int turn2, int p1Score, int p2Score){
+        //setGrid = gridSet;
+        int setGrid = GRID;
+        players = new Player[2];
+        gridPoints = new GridPoint[setGrid + 1][setGrid + 1];
+        areas = new Area[setGrid][setGrid];
+        lines = new ArrayList<>();
+        turn = turn2; //Needs to be fixed: issue with it being more than 1 of the value it should be
+        isGameOver = isDrawGame = isBack = false;
+        // causes the game to crash
+//        getPlayers()[0].setScore(p1Score);
+//        getPlayers()[1].setScore(p2Score);
+
+//        // Player Initialize
+        for (int i = 0; i < players.length; i++)
+            players[i] = new Player();
+
+        // gridPoints Initialize
+        for (int x = 0; x < setGrid + 1; x++) {
+            for (int y = 0; y < setGrid + 1; y++) {
+                gridPoints[x][y] = new GridPoint(xMin + x * LENGTH, yMin + y * LENGTH);
+            }
+        }
+
+        // areas Initialize
+        for (int x = 0; x < setGrid; x++) {
+            for (int y = 0; y < setGrid; y++) {
+//                areas[x][y] = new Area();
+                areas[x][y] = myAreas[x][y];
+            }
+        }
+
+        // Line Initialize
+        for(int i = 0; i < myLines.size(); i++){
+            lines.add(myLines.get(i));
+//            lines.set(i, myLines.get(i));
+        }
+        playerLog();
     }
 
     public boolean checkGameOver() {
@@ -227,6 +265,11 @@ public class GameDataModel {
 
     public int getTurn() {
         return turn;
+    }
+
+    public void setTurn(int turn2){
+        turn2 = 1;
+        turn =+ turn2;
     }
 
 }

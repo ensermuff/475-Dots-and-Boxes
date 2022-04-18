@@ -86,28 +86,19 @@ public class GameView extends View {
 
     // doesn't work yet
     public void undo(){
-        int lastLineIndex = lines.size() - 1;
+        //lastline is assigned a line on the onTouchEvent method
         for (Line line : model.getLines()){
-            if (line == lines.get(lastLineIndex)){
+            if (line == lastLine){
                 Paint myPaint = new Paint();
-                myPaint.setColor(Color.LTGRAY);
-                lines.remove(lastLineIndex);
+                myPaint.setColor(Color.LTGRAY);  //change the line color back to light gray
+                line.setDraw(false);
+                lines.remove(line);
+                model.turnover(); //need to fix this
                 line.setColor("lightGrey");
-                //model.init();
+                GameDataModel.init2(model.getAreas(),lines, model.getTurn(), model.getPlayers()[0].getScore(), model.getPlayers()[1].getScore());
                 invalidate(); //redraw
             }
         }
-//        if (lastLine == lines.get(lastLineIndex)){
-//            lines.remove(lastLineIndex);
-//        }
-//        //change the line color back to light gray
-//        Paint myPaint = new Paint();
-//        myPaint.setColor(Color.LTGRAY);
-//        lines.get(lastLineIndex).setPaint(myPaint);
-//        //postInvalidate() tells the system that the current view has changed and it should be
-//        //redrawn as soon as possible
-//        postInvalidate();
-//        return lines;
     }
 
     public void onDraw(Canvas canvas) {
@@ -150,7 +141,6 @@ public class GameView extends View {
         for (Line line : model.getLines()) {
             lines.add(line);
         }
-        lastLine = lines.get(lines.size()-1);
         for(int i = 0; i < lines.size(); i++){
             canvas.drawLine(lines.get(i).getP1().getX(), lines.get(i).getP1().getY(),
                     lines.get(i).getP2().getX(), lines.get(i).getP2().getY(), lines.get(i).getPaint());
@@ -242,15 +232,7 @@ public class GameView extends View {
                                     line.getPaint().setColor(Color.parseColor(player2Color));
 
                                 }
-//                                lastPoint = line.getP1();
-//                                lasttPoint2 = line.getP2();
-//                                lastLineType = line.getLINE_TYPE();
-//                                p1.add(line.getP1());
-//                                p2.add(line.getP2());
-//                                line_types.add(line.getLINE_TYPE());
-//                                lines.add(line);
-
-
+                                lastLine = line;
                                 line.setDraw(true);
                                 isClickedLine = true;
                                 Log.d("ddamddi", " [LINE]" +
@@ -274,16 +256,10 @@ public class GameView extends View {
                                 //Checking the Vertical lines
                                 if (model.getTurn() % 2 == 0) {
                                     line.getPaint().setColor(Color.parseColor(player1Color));
-
                                 }else {
                                     line.getPaint().setColor(Color.parseColor(player2Color));
-
                                 }
-
-//                                lastPoint = line.getP1();
-//                                lasttPoint2 = line.getP2();
-//                                lastLineType = line.getLINE_TYPE();
-
+                                lastLine = line;
                                 line.setDraw(true);
                                 isClickedLine = true;
                                 Log.d("ddamddi", " [LINE]   (" + (line.getP1().getX() - GameDataModel.getxMin()) / GameDataModel.getLENGTH() + "," + (line.getP1().getY() - GameDataModel.getyMin()) / GameDataModel.getLENGTH() + ")-(" + (line.getP2().getX() - GameDataModel.getxMin()) / GameDataModel.getLENGTH() + "," + (line.getP2().getY() - GameDataModel.getyMin()) / GameDataModel.getLENGTH() + ") is Drawn");

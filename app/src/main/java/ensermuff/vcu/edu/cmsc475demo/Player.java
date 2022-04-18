@@ -11,6 +11,10 @@ public class Player {
         return score;
     }
 
+    public void setScore(int score2) {
+        score = score2;
+    }
+
     public void eraseScore() {
         this.score = 0;
     }
