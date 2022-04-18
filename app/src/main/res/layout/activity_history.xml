@@ -124,7 +124,7 @@
                             android:layout_weight="0.2" />
 
                         <TextView
-                            android:id="@+id/textView11"
+                            android:id="@+id/entry1timestamp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -147,13 +147,13 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textView16"
+                                android:id="@+id/entry1player1score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#F44336"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -164,13 +164,13 @@
                                 android:layout_weight="0.1" />
 
                             <TextView
-                                android:id="@+id/textView19"
+                                android:id="@+id/entry1player2score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#3F51B5"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -216,7 +216,7 @@
                             android:layout_weight="0.2" />
 
                         <TextView
-                            android:id="@+id/textView12"
+                            android:id="@+id/entry2timestamp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -239,13 +239,13 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textView14"
+                                android:id="@+id/entry2player1score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#F44336"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -256,13 +256,13 @@
                                 android:layout_weight="0.1" />
 
                             <TextView
-                                android:id="@+id/textView20"
+                                android:id="@+id/entry2player2score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#3F51B5"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -308,7 +308,7 @@
                             android:layout_weight="0.2" />
 
                         <TextView
-                            android:id="@+id/textView8"
+                            android:id="@+id/entry3timestamp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -333,13 +333,13 @@
                             app:layout_constraintStart_toStartOf="parent">
 
                             <TextView
-                                android:id="@+id/textView15"
+                                android:id="@+id/entry3player1score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#F44336"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -350,13 +350,13 @@
                                 android:layout_weight="0.1" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/entry3player2score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#3F51B5"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -402,7 +402,7 @@
                             android:layout_weight="0.2" />
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/entry4timestamp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -427,13 +427,13 @@
                             app:layout_constraintStart_toStartOf="parent">
 
                             <TextView
-                                android:id="@+id/textView17"
+                                android:id="@+id/entry4player1score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#F44336"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -444,13 +444,13 @@
                                 android:layout_weight="0.1" />
 
                             <TextView
-                                android:id="@+id/textView22"
+                                android:id="@+id/entry4player2score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#3F51B5"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -496,7 +496,7 @@
                             android:layout_weight="0.2" />
 
                         <TextView
-                            android:id="@+id/textView10"
+                            android:id="@+id/entry5timestamp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -519,13 +519,13 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textView18"
+                                android:id="@+id/entry5player1score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#F44336"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
@@ -536,13 +536,13 @@
                                 android:layout_weight="0.1" />
 
                             <TextView
-                                android:id="@+id/textView23"
+                                android:id="@+id/entry5player2score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="#3F51B5"
                                 android:fontFamily="@font/syncopate"
-                                android:text="000"
+                                android:text="00"
                                 android:textAlignment="center"
                                 android:textSize="34sp"
                                 android:textStyle="bold" />
