@@ -14,7 +14,7 @@ public class GameDataModel {
     public static int turn;
     public static boolean isGameOver, isDrawGame, isBack;
     private static ArrayList<Line> lines;
-    private static Area[][] areas;
+    public static Area[][] areas;
     private static Player[] players;
     private static int xMin;
     private static int yMin;
