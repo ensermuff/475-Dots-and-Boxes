@@ -72,14 +72,17 @@ public class Area {
     public void draw(Canvas canvas) {
         if (getOwner() == 0)
             paint.setColor(Color.WHITE);
-        else if (getOwner() == 1)
+        else if (getOwner() == 1){
             paint.setColor(Color.parseColor(player1Color));
-        else if (getOwner() == 2)
+            paint.setAlpha(140);}
+        else if (getOwner() == 2) {
             paint.setColor(Color.parseColor(player2Color));
+            paint.setAlpha(140);
+        }
 
         //Setting up squares and colors
-        square.set(getCenter().getX() - GameDataModel.getLENGTH() / 3, getCenter().getY() - GameDataModel.getLENGTH() / 3,
-                getCenter().getX() + GameDataModel.getLENGTH() / 3, getCenter().getY() + GameDataModel.getLENGTH() / 3);
+        square.set(getCenter().getX() - GameDataModel.getLENGTH() / 2, getCenter().getY() - GameDataModel.getLENGTH() / 2,
+                getCenter().getX() + GameDataModel.getLENGTH() / 2, getCenter().getY() + GameDataModel.getLENGTH() / 2);
         canvas.drawRect(square, paint);
     }
 
