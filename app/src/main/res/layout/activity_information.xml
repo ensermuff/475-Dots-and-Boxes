@@ -154,11 +154,10 @@
                             android:layout_weight="1"
                             android:autoText="false"
                             android:background="#FFFFFF"
-                            android:fontFamily="@font/syncopate"
+                            android:fontFamily="@font/sarpanch_medium"
                             android:text="Playing squares is easy!\nJust click a space in between two dots to create a line.\nThe first player to complete a box wins that square\nand gets to go again.\nThe player who captures the most squares\nat the end is the winner!"
                             android:textAlignment="center"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
@@ -261,11 +260,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="#FFFFFF"
-                            android:fontFamily="@font/syncopate"
+                            android:fontFamily="@font/sarpanch_medium"
                             android:text="VCU Student Group Project\nTeam:\nFiraol Ensermu\nAlexander Harris\nDustin Nash\nMcCrae Smith"
                             android:textAlignment="center"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
