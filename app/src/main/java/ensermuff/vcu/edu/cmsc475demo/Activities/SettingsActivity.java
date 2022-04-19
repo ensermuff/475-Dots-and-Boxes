@@ -17,11 +17,27 @@ import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    public static String player1Color = "#fc4e42";;
-    public static String player2Color = "#00abff";
+    public static String player1Color = "#E91414";
+    public static String player2Color = "#1443E9";
     public static int gridSet = 5;
     GameView view;
 
+
+    public static boolean touchp1Red = false;
+    public static boolean touchp1Blue = false;
+    public static boolean touchp1Green = false;
+    public static boolean touchp1LightBlue = false;
+    public static boolean touchp1Purple = false;
+    public static boolean touchp1Orange = false;
+    public static boolean touchp1Brown = false;
+
+    public static boolean touchp2Red = false;
+    public static boolean touchp2Blue = false;
+    public static boolean touchp2Green = false;
+    public static boolean touchp2LightBlue = false;
+    public static boolean touchp2Purple = false;
+    public static boolean touchp2Orange = false;
+    public static boolean touchp2Brown = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +58,20 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        //Makes sure to check color is true
+        colorCheck();
+
         //Sets the value of the player1 colors
         ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
         p1RedBtn.setOnClickListener((v) ->{
-            player1Color = "#E91414";
+            touchp1Red = true;
+            colorCheck();
         });
 
         ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
         p1BlueBtn.setOnClickListener((v) ->{
-            player1Color = "#1443E9";
+            touchp1Blue = true;
+            colorCheck();
         });
 
         ImageButton p1GreenBtn = findViewById(R.id.p1GreenBtn);
@@ -81,7 +102,8 @@ public class SettingsActivity extends AppCompatActivity {
         //Sets the value of the player1 colors
         ImageButton p2RedBtn = findViewById(R.id.p2RedBtn);
         p2RedBtn.setOnClickListener((v) ->{
-            player2Color = "#E91414";
+            touchp2Red = true;
+            colorCheck();
         });
 
         ImageButton p2BlueBtn = findViewById(R.id.p2BlueBtn);
@@ -132,6 +154,41 @@ public class SettingsActivity extends AppCompatActivity {
             gridSet = 3;
             GameDataModel.GRID = gridSet;
         });
+
+    }
+
+    public void colorCheck(){
+        //Checks first to see if it was touched
+        if(touchp1Red) {
+            ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
+            p1RedBtn.setImageResource(R.drawable.redslt);
+            //Checks to see if player 2 picked same color
+            if(player1Color == player2Color){
+                p1RedBtn.setImageResource(R.drawable.cantslt);
+                player1Color = "#E91414";
+            }
+        }
+
+        if(touchp1Blue){
+            ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
+            p1BlueBtn.setImageResource(R.drawable.blueslt);
+            //Checks to see if player 2 picked same color
+            if(player1Color == player2Color){
+                p1BlueBtn.setImageResource(R.drawable.cantslt);
+                player1Color = "#1443E9";
+            }
+        }
+
+        //Checks first to see if it was touched
+        if(touchp2Red) {
+            ImageButton p2RedBtn = findViewById(R.id.p2RedBtn);
+            p2RedBtn.setImageResource(R.drawable.redslt);
+            //Checks to see if player 1 picked same color
+            if(player2Color == player1Color){
+                p2RedBtn.setImageResource(R.drawable.cantslt);
+                player2Color = "#E91414";
+            }
+        }
 
     }
 }
