@@ -261,9 +261,9 @@
                             android:layout_weight="1"
                             android:background="#FFFFFF"
                             android:fontFamily="@font/sarpanch_medium"
-                            android:text="VCU Student Group Project\nTeam:\nFiraol Ensermu\nAlexander Harris\nDustin Nash\nMcCrae Smith"
+                            android:text="VCU Student Group Project\nTeam:\nFiraol Ensermu\nAlexander Harris\nDustin Nash\nMcCrae Smith\nScheming Weasel (faster version) Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/"
                             android:textAlignment="center"
-                            android:textSize="20sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
