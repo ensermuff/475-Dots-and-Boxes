@@ -24,11 +24,11 @@
         android:layout_width="224dp"
         android:layout_height="43dp"
         android:layout_marginTop="16dp"
-        android:text="SETTINGS"
-        android:textStyle="bold"
         android:fontFamily="@font/syncopate"
+        android:text="SETTINGS"
         android:textAlignment="center"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/settingsBackBtn"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,109 +49,127 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="4dp">
 
             <TextView
                 android:id="@+id/Player1Text"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
                 android:fontFamily="@font/syncopate"
+                android:padding="2dp"
                 android:text="Player 1 Color"
-                android:textColor="@android:color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal"
                 tools:ignore="MissingConstraints">
 
                 <ImageButton
                     android:id="@+id/p1RedBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:scaleType="center"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/red"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p1BlueBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/blue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p1GreenBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/green"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p1LightBlueBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/lightblue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p1PurpleBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/purple"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p1OrangeBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/orange"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p1BrownBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/brown"
                     tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
@@ -171,109 +189,127 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="4dp">
 
             <TextView
                 android:id="@+id/Player2Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
                 android:fontFamily="@font/syncopate"
+                android:padding="2dp"
                 android:text="Player 2 Color"
-                android:textColor="@android:color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal"
                 tools:ignore="MissingConstraints">
 
                 <ImageButton
                     android:id="@+id/p2RedBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:minWidth="48dp"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/red"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p2BlueBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/blue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p2GreenBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/green"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p2LightBlueBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/lightblue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p2PurpleBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/purple"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p2OrangeBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/orange"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Space
-                    android:layout_width="15dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/p2BrownBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/brown"
                     tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
@@ -289,22 +325,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" >
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="4dp">
 
             <TextView
                 android:id="@+id/gridSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
+                android:background="@color/white"
                 android:fontFamily="@font/syncopate"
+                android:padding="2dp"
                 android:text="GridSize"
-                android:textColor="@android:color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -318,20 +358,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4X4" />
+                    android:fontFamily="@font/syncopate"
+                    android:text="4X4"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
 
                 <Button
                     android:id="@+id/btn5x5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="5X5" />
+                    android:fontFamily="@font/syncopate"
+                    android:text="5X5"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
+
                 <Button
                     android:id="@+id/btn6x6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="6X6" />
+                    android:fontFamily="@font/syncopate"
+                    android:text="6X6"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </LinearLayout>
@@ -350,17 +407,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:padding="4dp"
             tools:layout_editor_absoluteY="25dp">
 
             <TextView
                 android:id="@+id/music"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
+                android:background="@color/white"
                 android:fontFamily="@font/syncopate"
+                android:padding="2dp"
                 android:text="Music"
-                android:textColor="@android:color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -374,21 +435,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="song 1" />
+                    android:fontFamily="@font/syncopate"
+                    android:text="song 1"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
 
                 <Button
                     android:id="@+id/song2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="song 2" />
+                    android:fontFamily="@font/syncopate"
+                    android:text="song 2"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
 
                 <Button
                     android:id="@+id/song3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="song 3" />
+                    android:fontFamily="@font/syncopate"
+                    android:text="song 3"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
