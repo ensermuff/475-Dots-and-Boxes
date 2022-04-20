@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -73,8 +74,11 @@ public class GameActivity extends AppCompatActivity {
         // setContentView(view);
         myView = (ConstraintLayout) findViewById(R.id.linearLayout);
         myView.addView(view);
-//        LinearLayout v = (LinearLayout) findViewById(R.id.linearLayout);
-//        v.addView(view);
+
+        if (model.checkGameOver()){
+            // call the winningdialog
+            openWinningDialog();
+        }
     }
 
     @Override
@@ -85,7 +89,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void openDialog() {
-        
         final Dialog menuDialog = new Dialog(GameActivity.this);
         //added custom view to dialog with no title
         menuDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -155,6 +158,16 @@ public class GameActivity extends AppCompatActivity {
         });
 
         menuDialog.show();
+    }
+
+    public void openWinningDialog() {
+        final Dialog winningDialog = new Dialog(GameActivity.this);
+        //added custom view to dialog with no title
+        winningDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        winningDialog.setCancelable(true);
+        //Mention the name of the custom dialog
+        winningDialog.setContentView(R.layout.winningdialog);
+        winningDialog.show();
     }
     /*public void openInfoDialog(){
         final Dialog menuDialog = new Dialog(GameActivity.this);

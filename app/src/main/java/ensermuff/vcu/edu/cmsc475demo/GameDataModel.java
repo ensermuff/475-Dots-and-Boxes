@@ -267,9 +267,4 @@ public class GameDataModel {
         return turn;
     }
 
-    public void setTurn(int turn2){
-        turn2 = 1;
-        turn =+ turn2;
-    }
-
 }
