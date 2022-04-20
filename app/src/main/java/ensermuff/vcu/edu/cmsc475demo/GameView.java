@@ -3,6 +3,7 @@ package ensermuff.vcu.edu.cmsc475demo;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -22,6 +23,7 @@ import ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity;
 public class GameView extends View {
 
     Paint paint = new Paint();
+    GameActivity activity;
     GameDataModel model;
     String player1, player2;
     ArrayList<Line> lines;
@@ -52,6 +54,8 @@ public class GameView extends View {
     public GameView(Context context, GameDataModel model) {
         super(context);
         this.model = model;
+
+        activity = (GameActivity) getActivity();
 
         lines = new ArrayList<>();
         areas = new ArrayList<>();
@@ -189,6 +193,7 @@ public class GameView extends View {
                 paint.setColor(Color.parseColor(player2Color));
             canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
         } else {
+            activity.openWinningDialog();
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));
             canvas.drawText("GAME OVER", getWidth() / 2, (int) (getWidth() / 10 * 3) + 25, paint);
@@ -291,6 +296,16 @@ public class GameView extends View {
         return true;
     }
 
+    public Activity getActivity() {
+        Context context = getContext();
+        while (context instanceof ContextWrapper) {
+            if (context instanceof Activity) {
+                return (Activity)context;
+            }
+            context = ((ContextWrapper)context).getBaseContext();
+        }
+        return null;
+    }
 
 }
 
