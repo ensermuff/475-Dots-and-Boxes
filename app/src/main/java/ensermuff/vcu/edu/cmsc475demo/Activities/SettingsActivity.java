@@ -47,7 +47,6 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.settings_activity);
 
 
-
         ImageButton backBtn = findViewById(R.id.settingsBackBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,11 +59,11 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         //Makes sure to check color is true
-        beforeColorCheck();
+        colorCheck();
 
         //Sets the value of the player1 colors
         ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
-        p1RedBtn.setOnClickListener((v) ->{
+        p1RedBtn.setOnClickListener((v) -> {
 
             touchp1Red = true;
             touchp1Blue = false;
@@ -78,7 +77,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
-        p1BlueBtn.setOnClickListener((v) ->{
+        p1BlueBtn.setOnClickListener((v) -> {
 
             touchp1Red = false;
             touchp1Blue = true;
@@ -92,7 +91,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         ImageButton p1GreenBtn = findViewById(R.id.p1GreenBtn);
-        p1GreenBtn.setOnClickListener((v) ->{
+        p1GreenBtn.setOnClickListener((v) -> {
 
             touchp1Red = false;
             touchp1Blue = false;
@@ -106,28 +105,60 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         ImageButton p1LightBlueBtn = findViewById(R.id.p1LightBlueBtn);
-        p1LightBlueBtn.setOnClickListener((v) ->{
-            player1Color = "#14DCE9";
+        p1LightBlueBtn.setOnClickListener((v) -> {
+            touchp1Red = false;
+            touchp1Blue = false;
+            touchp1Green = false;
+            touchp1LightBlue = true;
+            touchp1Purple = false;
+            touchp1Orange = false;
+            touchp1Brown = false;
+
+            colorCheck();
         });
 
         ImageButton p1PurpleBtn = findViewById(R.id.p1PurpleBtn);
-        p1PurpleBtn.setOnClickListener((v) ->{
-            player1Color = "#CB14E9";
+        p1PurpleBtn.setOnClickListener((v) -> {
+            touchp1Red = false;
+            touchp1Blue = false;
+            touchp1Green = false;
+            touchp1LightBlue = false;
+            touchp1Purple = true;
+            touchp1Orange = false;
+            touchp1Brown = false;
+
+            colorCheck();
         });
 
         ImageButton p1OrangeBtn = findViewById(R.id.p1OrangeBtn);
-        p1OrangeBtn.setOnClickListener((v) ->{
-            player1Color = "#E96E14";
+        p1OrangeBtn.setOnClickListener((v) -> {
+            touchp1Red = false;
+            touchp1Blue = false;
+            touchp1Green = false;
+            touchp1LightBlue = false;
+            touchp1Purple = false;
+            touchp1Orange = true;
+            touchp1Brown = false;
+
+            colorCheck();
         });
 
         ImageButton p1BrownBtn = findViewById(R.id.p1BrownBtn);
-        p1BrownBtn.setOnClickListener((v) ->{
-            player1Color = "#932B2B";
+        p1BrownBtn.setOnClickListener((v) -> {
+            touchp1Red = false;
+            touchp1Blue = false;
+            touchp1Green = false;
+            touchp1LightBlue = false;
+            touchp1Purple = false;
+            touchp1Orange = false;
+            touchp1Brown = true;
+
+            colorCheck();
         });
 
         //Sets the value of the player1 colors
         ImageButton p2RedBtn = findViewById(R.id.p2RedBtn);
-        p2RedBtn.setOnClickListener((v) ->{
+        p2RedBtn.setOnClickListener((v) -> {
 
             touchp2Red = true;
             touchp2Blue = false;
@@ -141,7 +172,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         ImageButton p2BlueBtn = findViewById(R.id.p2BlueBtn);
-        p2BlueBtn.setOnClickListener((v) ->{
+        p2BlueBtn.setOnClickListener((v) -> {
 
             touchp2Red = false;
             touchp2Blue = true;
@@ -155,7 +186,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         ImageButton p2GreenBtn = findViewById(R.id.p2GreenBtn);
-        p2GreenBtn.setOnClickListener((v) ->{
+        p2GreenBtn.setOnClickListener((v) -> {
 
             touchp2Red = false;
             touchp2Blue = false;
@@ -169,70 +200,79 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         ImageButton p2LightBlueBtn = findViewById(R.id.p2LightBlueBtn);
-        p2LightBlueBtn.setOnClickListener((v) ->{
-            player2Color = "#14DCE9";
+        p2LightBlueBtn.setOnClickListener((v) -> {
+            touchp2Red = false;
+            touchp2Blue = false;
+            touchp2Green = false;
+            touchp2LightBlue = true;
+            touchp2Purple = false;
+            touchp2Orange = false;
+            touchp2Brown = false;
+
+            colorCheck();
         });
 
         ImageButton p2PurpleBtn = findViewById(R.id.p2PurpleBtn);
-        p2PurpleBtn.setOnClickListener((v) ->{
-            player2Color = "#CB14E9";
+        p2PurpleBtn.setOnClickListener((v) -> {
+            touchp2Red = false;
+            touchp2Blue = false;
+            touchp2Green = false;
+            touchp2LightBlue = false;
+            touchp2Purple = true;
+            touchp2Orange = false;
+            touchp2Brown = false;
+
+            colorCheck();
         });
 
         ImageButton p2OrangeBtn = findViewById(R.id.p2OrangeBtn);
-        p2OrangeBtn.setOnClickListener((v) ->{
-            player2Color = "#E96E14";
+        p2OrangeBtn.setOnClickListener((v) -> {
+            touchp2Red = false;
+            touchp2Blue = false;
+            touchp2Green = false;
+            touchp2LightBlue = false;
+            touchp2Purple = false;
+            touchp2Orange = true;
+            touchp2Brown = false;
+
+            colorCheck();
         });
 
         ImageButton p2BrownBtn = findViewById(R.id.p2BrownBtn);
-        p2BrownBtn.setOnClickListener((v) ->{
-            player2Color = "#932B2B";
+        p2BrownBtn.setOnClickListener((v) -> {
+            touchp2Red = false;
+            touchp2Blue = false;
+            touchp2Green = false;
+            touchp2LightBlue = false;
+            touchp2Purple = false;
+            touchp2Orange = false;
+            touchp2Brown = true;
+
+            colorCheck();
         });
 
         //Sets the value of the grid
         Button grid6x6 = findViewById(R.id.btn6x6);
-        grid6x6.setOnClickListener((v) ->{
+        grid6x6.setOnClickListener((v) -> {
             gridSet = 5;
             GameDataModel.GRID = gridSet;
         });
 
         Button grid5x5 = findViewById(R.id.btn5x5);
-        grid5x5.setOnClickListener((v) ->{
+        grid5x5.setOnClickListener((v) -> {
             gridSet = 4;
             GameDataModel.GRID = gridSet;
         });
 
         Button grid4x4 = findViewById(R.id.btn4x4);
-        grid4x4.setOnClickListener((v) ->{
+        grid4x4.setOnClickListener((v) -> {
             gridSet = 3;
             GameDataModel.GRID = gridSet;
         });
 
     }
 
-    private void beforeColorCheck() {
-        ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
-        ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
-        ImageButton p1GreenBtn = findViewById(R.id.p1GreenBtn);
-        ImageButton p1LightBlueBtn = findViewById(R.id.p1LightBlueBtn);
-        ImageButton p1PurpleBtn = findViewById(R.id.p1PurpleBtn);
-        ImageButton p1OrangeBtn = findViewById(R.id.p1OrangeBtn);
-        ImageButton p1BrownBtn = findViewById(R.id.p1BrownBtn);
-
-        ImageButton p2RedBtn = findViewById(R.id.p2RedBtn);
-        ImageButton p2BlueBtn = findViewById(R.id.p2BlueBtn);
-        ImageButton p2GreenBtn = findViewById(R.id.p2GreenBtn);
-        ImageButton p2LightBlueBtn = findViewById(R.id.p2LightBlueBtn);
-        ImageButton p2PurpleBtn = findViewById(R.id.p2PurpleBtn);
-        ImageButton p2OrangeBtn = findViewById(R.id.p2OrangeBtn);
-        ImageButton p2BrownBtn = findViewById(R.id.p2BrownBtn);
-
-        p1RedBtn.setImageResource(R.drawable.redslt);
-        p1BlueBtn.setImageResource(R.drawable.cantslt);
-        p2RedBtn.setImageResource(R.drawable.cantslt);
-        p2BlueBtn.setImageResource(R.drawable.blueslt);
-    }
-
-    public void colorCheck(){
+    public void colorCheck() {
         ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
         ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
         ImageButton p1GreenBtn = findViewById(R.id.p1GreenBtn);
@@ -251,102 +291,171 @@ public class SettingsActivity extends AppCompatActivity {
 
         //Below this will check if player 1 color was selected
         //Checks first to see if it was touched
-        if(touchp1Red) {
+        if (touchp1Red) {
             tmpColor = "#E91414";
             //Checks to see if player 2 picked same color
-            if(player2Color == tmpColor){
+            if (player2Color == tmpColor) {
                 //p1RedBtn.setImageResource(R.drawable.cantslt);
-            }
-            else{
+            } else {
                 p1RedBtn.setImageResource(R.drawable.redslt);
-                p2RedBtn.setImageResource(R.drawable.cantslt);
                 player1Color = "#E91414";
-                
+
                 selectCheck();
-                finalCheck();
             }
         }
 
         //Checks first to see if it was touched
-        if(touchp1Blue) {
+        if (touchp1Blue) {
             tmpColor = "#1443E9";
             //Checks to see if player 2 picked same color
-            if(player2Color == tmpColor){
-                //p1BlueBtn.setImageResource(R.drawable.cantslt);
-            }
-            else{
+            if (player2Color == tmpColor) {
+            } else {
                 p1BlueBtn.setImageResource(R.drawable.blueslt);
-                p2BlueBtn.setImageResource(R.drawable.cantslt);
                 player1Color = "#1443E9";
 
                 selectCheck();
-                finalCheck();
             }
         }
 
         //Checks first to see if it was touched
-        if(touchp1Green) {
+        if (touchp1Green) {
             tmpColor = "#32E914";
             //Checks to see if player 2 picked same color
-            if(player2Color == tmpColor){
-                //p1GreenBtn.setImageResource(R.drawable.cantslt);
-            }
-            else{
+            if (player2Color == tmpColor) {
+            } else {
                 p1GreenBtn.setImageResource(R.drawable.greenslt);
-                p2GreenBtn.setImageResource(R.drawable.cantslt);
                 player1Color = "#32E914";
 
                 selectCheck();
-                finalCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp1LightBlue) {
+            tmpColor = "#14DCE9";
+            //Checks to see if player 2 picked same color
+            if (player2Color == tmpColor) {
+            } else {
+                p1LightBlueBtn.setImageResource(R.drawable.lightblueslt);
+                player1Color = "#14DCE9";
+
+                selectCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp1Purple) {
+            tmpColor = "#CB14E9";
+            //Checks to see if player 2 picked same color
+            if (player2Color == tmpColor) {
+            } else {
+                p1PurpleBtn.setImageResource(R.drawable.purpleslt);
+                player1Color = "#CB14E9";
+
+                selectCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp1Orange) {
+            tmpColor = "#E96E14";
+            //Checks to see if player 2 picked same color
+            if (player2Color == tmpColor) {
+            } else {
+                p1OrangeBtn.setImageResource(R.drawable.orangeslt);
+                player1Color = "#E96E14";
+
+                selectCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp1Brown) {
+            tmpColor = "#932B2B";
+            //Checks to see if player 2 picked same color
+            if (player2Color == tmpColor) {
+            } else {
+                p1BrownBtn.setImageResource(R.drawable.brownslt);
+                player1Color = "#932B2B";
+
+                selectCheck();
             }
         }
 
         //Below this will check if player 2 color was selected
         //Checks first to see if it was touched
-        if(touchp2Red) {
+        if (touchp2Red) {
             tmpColor = "#E91414";
             //Checks to see if player 1 picked same color
-            if(player1Color == tmpColor){
-                //p2RedBtn.setImageResource(R.drawable.cantslt);
-            }
-            else{
+            if (player1Color == tmpColor) {
+            } else {
                 p2RedBtn.setImageResource(R.drawable.redslt);
-                p1RedBtn.setImageResource(R.drawable.cantslt);
                 player2Color = "#E91414";
 
                 selectCheck();
-                finalCheck();
             }
         }
 
-        if(touchp2Blue) {
+        if (touchp2Blue) {
             tmpColor = "#1443E9";
             //Checks to see if player 1 picked same color
-            if(player1Color == tmpColor){
-                //p2BlueBtn.setImageResource(R.drawable.cantslt);
-            }
-            else{
+            if (player1Color == tmpColor) {
+            } else {
                 p2BlueBtn.setImageResource(R.drawable.blueslt);
-                p1BlueBtn.setImageResource(R.drawable.cantslt);
                 player2Color = "#1443E9";
                 selectCheck();
-                finalCheck();
             }
         }
 
         //Checks first to see if it was touched
-        if(touchp2Green) {
+        if (touchp2Green) {
             tmpColor = "#32E914";
             //Checks to see if player 2 picked same color
-            if(player1Color == tmpColor){
-                //p1GreenBtn.setImageResource(R.drawable.cantslt);
-            }
-            else{
+            if (player1Color == tmpColor) {
+            } else {
                 p2GreenBtn.setImageResource(R.drawable.greenslt);
-                p1GreenBtn.setImageResource(R.drawable.cantslt);
                 player2Color = "#32E914";
                 selectCheck();
-                finalCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp2LightBlue) {
+            tmpColor = "#14DCE9";
+            //Checks to see if player 2 picked same color
+            if (player1Color == tmpColor) {
+            } else {
+                p2LightBlueBtn.setImageResource(R.drawable.lightblueslt);
+                player2Color = "#14DCE9";
+                selectCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp2Purple) {
+            tmpColor = "#CB14E9";
+            //Checks to see if player 2 picked same color
+            if (player1Color == tmpColor) {
+            } else {
+                p2PurpleBtn.setImageResource(R.drawable.purpleslt);
+                player2Color = "#CB14E9";
+                selectCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp2Orange) {
+            tmpColor = "#E96E14";
+            //Checks to see if player 2 picked same color
+            if (player1Color == tmpColor) {
+            } else {
+                p2OrangeBtn.setImageResource(R.drawable.orangeslt);
+                player2Color = "#E96E14";
+                selectCheck();
+            }
+        }
+        //Checks first to see if it was touched
+        if (touchp2Brown) {
+            tmpColor = "#932B2B";
+            //Checks to see if player 2 picked same color
+            if (player1Color == tmpColor) {
+            } else {
+                p2BrownBtn.setImageResource(R.drawable.brownslt);
+                player2Color = "#932B2B";
+                selectCheck();
             }
         }
 
@@ -360,8 +469,8 @@ public class SettingsActivity extends AppCompatActivity {
     orange "#E96E14"
     brown "#932B2B"
      */
-    
-    public void selectCheck(){
+
+    public void selectCheck() {
         ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
         ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
         ImageButton p1GreenBtn = findViewById(R.id.p1GreenBtn);
@@ -377,8 +486,9 @@ public class SettingsActivity extends AppCompatActivity {
         ImageButton p2PurpleBtn = findViewById(R.id.p2PurpleBtn);
         ImageButton p2OrangeBtn = findViewById(R.id.p2OrangeBtn);
         ImageButton p2BrownBtn = findViewById(R.id.p2BrownBtn);
-        
-        if(player1Color == "#E91414"){
+
+        //Player1
+        if (player1Color == "#E91414") {
             //p1RedBtn.setImageResource(R.drawable.red);
             p1BlueBtn.setImageResource(R.drawable.blue);
             p1GreenBtn.setImageResource(R.drawable.green);
@@ -387,7 +497,7 @@ public class SettingsActivity extends AppCompatActivity {
             p1OrangeBtn.setImageResource(R.drawable.orange);
             p1BrownBtn.setImageResource(R.drawable.brown);
         }
-        if(player1Color == "#1443E9"){
+        if (player1Color == "#1443E9") {
             p1RedBtn.setImageResource(R.drawable.red);
             //p1BlueBtn.setImageResource(R.drawable.blue);
             p1GreenBtn.setImageResource(R.drawable.green);
@@ -396,7 +506,7 @@ public class SettingsActivity extends AppCompatActivity {
             p1OrangeBtn.setImageResource(R.drawable.orange);
             p1BrownBtn.setImageResource(R.drawable.brown);
         }
-        if(player1Color == "#32E914"){
+        if (player1Color == "#32E914") {
             p1RedBtn.setImageResource(R.drawable.red);
             p1BlueBtn.setImageResource(R.drawable.blue);
             //p1GreenBtn.setImageResource(R.drawable.green);
@@ -405,7 +515,44 @@ public class SettingsActivity extends AppCompatActivity {
             p1OrangeBtn.setImageResource(R.drawable.orange);
             p1BrownBtn.setImageResource(R.drawable.brown);
         }
-        if(player2Color == "#E91414"){
+        if (player1Color == "#14DCE9") {
+            p1RedBtn.setImageResource(R.drawable.red);
+            p1BlueBtn.setImageResource(R.drawable.blue);
+            p1GreenBtn.setImageResource(R.drawable.green);
+            //p1LightBlueBtn.setImageResource(R.drawable.lightblue);
+            p1PurpleBtn.setImageResource(R.drawable.purple);
+            p1OrangeBtn.setImageResource(R.drawable.orange);
+            p1BrownBtn.setImageResource(R.drawable.brown);
+        }
+        if (player1Color == "#CB14E9") {
+            p1RedBtn.setImageResource(R.drawable.red);
+            p1BlueBtn.setImageResource(R.drawable.blue);
+            p1GreenBtn.setImageResource(R.drawable.green);
+            p1LightBlueBtn.setImageResource(R.drawable.lightblue);
+            //p1PurpleBtn.setImageResource(R.drawable.purple);
+            p1OrangeBtn.setImageResource(R.drawable.orange);
+            p1BrownBtn.setImageResource(R.drawable.brown);
+        }
+        if (player1Color == "#E96E14") {
+            p1RedBtn.setImageResource(R.drawable.red);
+            p1BlueBtn.setImageResource(R.drawable.blue);
+            p1GreenBtn.setImageResource(R.drawable.green);
+            p1LightBlueBtn.setImageResource(R.drawable.lightblue);
+            p1PurpleBtn.setImageResource(R.drawable.purple);
+            //p1OrangeBtn.setImageResource(R.drawable.orange);
+            p1BrownBtn.setImageResource(R.drawable.brown);
+        }
+        if (player1Color == "#932B2B") {
+            p1RedBtn.setImageResource(R.drawable.red);
+            p1BlueBtn.setImageResource(R.drawable.blue);
+            p1GreenBtn.setImageResource(R.drawable.green);
+            p1LightBlueBtn.setImageResource(R.drawable.lightblue);
+            p1PurpleBtn.setImageResource(R.drawable.purple);
+            p1OrangeBtn.setImageResource(R.drawable.orange);
+            //p1BrownBtn.setImageResource(R.drawable.brown);
+        }
+        //Player2
+        if (player2Color == "#E91414") {
             //p2RedBtn.setImageResource(R.drawable.red);
             p2BlueBtn.setImageResource(R.drawable.blue);
             p2GreenBtn.setImageResource(R.drawable.green);
@@ -414,7 +561,7 @@ public class SettingsActivity extends AppCompatActivity {
             p2OrangeBtn.setImageResource(R.drawable.orange);
             p2BrownBtn.setImageResource(R.drawable.brown);
         }
-        if(player2Color == "#1443E9"){
+        if (player2Color == "#1443E9") {
             p2RedBtn.setImageResource(R.drawable.red);
             //p2BlueBtn.setImageResource(R.drawable.blue);
             p2GreenBtn.setImageResource(R.drawable.green);
@@ -423,7 +570,7 @@ public class SettingsActivity extends AppCompatActivity {
             p2OrangeBtn.setImageResource(R.drawable.orange);
             p2BrownBtn.setImageResource(R.drawable.brown);
         }
-        if(player2Color == "#32E914"){
+        if (player2Color == "#32E914") {
             p2RedBtn.setImageResource(R.drawable.red);
             p2BlueBtn.setImageResource(R.drawable.blue);
             //p2GreenBtn.setImageResource(R.drawable.green);
@@ -432,113 +579,41 @@ public class SettingsActivity extends AppCompatActivity {
             p2OrangeBtn.setImageResource(R.drawable.orange);
             p2BrownBtn.setImageResource(R.drawable.brown);
         }
-    }
-
-    public void finalCheck(){
-        ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);
-        ImageButton p1BlueBtn = findViewById(R.id.p1BlueBtn);
-        ImageButton p1GreenBtn = findViewById(R.id.p1GreenBtn);
-        ImageButton p1LightBlueBtn = findViewById(R.id.p1LightBlueBtn);
-        ImageButton p1PurpleBtn = findViewById(R.id.p1PurpleBtn);
-        ImageButton p1OrangeBtn = findViewById(R.id.p1OrangeBtn);
-        ImageButton p1BrownBtn = findViewById(R.id.p1BrownBtn);
-
-        ImageButton p2RedBtn = findViewById(R.id.p2RedBtn);
-        ImageButton p2BlueBtn = findViewById(R.id.p2BlueBtn);
-        ImageButton p2GreenBtn = findViewById(R.id.p2GreenBtn);
-        ImageButton p2LightBlueBtn = findViewById(R.id.p2LightBlueBtn);
-        ImageButton p2PurpleBtn = findViewById(R.id.p2PurpleBtn);
-        ImageButton p2OrangeBtn = findViewById(R.id.p2OrangeBtn);
-        ImageButton p2BrownBtn = findViewById(R.id.p2BrownBtn);
-
-        /*red "#E91414"
-        blue "#1443E9"
-        green "#32E914"
-        lightblue "#14DCE9"
-        purple "#CB14E9"
-        orange "#E96E14"
-        brown "#932B2B"
-         */
-
-        //Red p1
-        if(touchp1Red){
-            tmpColor = "#E91414";
-            if(tmpColor == player2Color) {
-                p1RedBtn.setImageResource(R.drawable.cantslt);
-            }
-            p2RedBtn.setImageResource(R.drawable.cantslt);
+        if (player2Color == "#14DCE9") {
+            p2RedBtn.setImageResource(R.drawable.red);
+            p2BlueBtn.setImageResource(R.drawable.blue);
+            p2GreenBtn.setImageResource(R.drawable.green);
+            //p2LightBlueBtn.setImageResource(R.drawable.lightblue);
+            p2PurpleBtn.setImageResource(R.drawable.purple);
+            p2OrangeBtn.setImageResource(R.drawable.orange);
+            p2BrownBtn.setImageResource(R.drawable.brown);
         }
-        //Blue p1
-        if(touchp1Blue){
-            tmpColor = "#1443E9";
-            if(tmpColor == player2Color) {
-                p1BlueBtn.setImageResource(R.drawable.cantslt);
-            }
-            p2BlueBtn.setImageResource(R.drawable.cantslt);
+        if (player2Color == "#CB14E9") {
+            p2RedBtn.setImageResource(R.drawable.red);
+            p2BlueBtn.setImageResource(R.drawable.blue);
+            p2GreenBtn.setImageResource(R.drawable.green);
+            p2LightBlueBtn.setImageResource(R.drawable.lightblue);
+            //p2PurpleBtn.setImageResource(R.drawable.purple);
+            p2OrangeBtn.setImageResource(R.drawable.orange);
+            p2BrownBtn.setImageResource(R.drawable.brown);
         }
-        //Green p1
-        if(touchp1Green){
-            tmpColor = "#32E914";
-            if(tmpColor == player2Color) {
-                p1GreenBtn.setImageResource(R.drawable.cantslt);
-            }
-            p2GreenBtn.setImageResource(R.drawable.cantslt);
+        if (player2Color == "#E96E14") {
+            p2RedBtn.setImageResource(R.drawable.red);
+            p2BlueBtn.setImageResource(R.drawable.blue);
+            p2GreenBtn.setImageResource(R.drawable.green);
+            p2LightBlueBtn.setImageResource(R.drawable.lightblue);
+            p2PurpleBtn.setImageResource(R.drawable.purple);
+            //p2OrangeBtn.setImageResource(R.drawable.orange);
+            p2BrownBtn.setImageResource(R.drawable.brown);
         }
-        //LightBlue p1
-        if(touchp1LightBlue){
-            p2LightBlueBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Purple p1
-        if(touchp1Purple){
-            p2PurpleBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Orange p1
-        if(touchp1Orange){
-            p2OrangeBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Brown p1
-        if(touchp1Brown){
-            p2BrownBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Red p2
-        if(touchp2Red){
-            tmpColor = "#E91414";
-            if(tmpColor == player1Color) {
-                p2RedBtn.setImageResource(R.drawable.cantslt);
-            }
-            p1RedBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Blue p2
-        if(touchp2Blue){
-            tmpColor = "#1443E9";
-            if(tmpColor == player1Color) {
-                p2BlueBtn.setImageResource(R.drawable.cantslt);
-            }
-            p1BlueBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Green p2
-        if(touchp2Green){
-            tmpColor = "#32E914";
-            if(tmpColor == player1Color) {
-                p2GreenBtn.setImageResource(R.drawable.cantslt);
-            }
-            p1GreenBtn.setImageResource(R.drawable.cantslt);
-        }
-        //LightBlue p2
-        if(touchp2LightBlue){
-            p1LightBlueBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Purple p2
-        if(touchp2Purple){
-            p1PurpleBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Orange p2
-        if(touchp2Orange){
-            p1OrangeBtn.setImageResource(R.drawable.cantslt);
-        }
-        //Brown p2
-        if(touchp2Brown){
-            p1BrownBtn.setImageResource(R.drawable.cantslt);
+        if (player2Color == "#932B2B") {
+            p2RedBtn.setImageResource(R.drawable.red);
+            p2BlueBtn.setImageResource(R.drawable.blue);
+            p2GreenBtn.setImageResource(R.drawable.green);
+            p2LightBlueBtn.setImageResource(R.drawable.lightblue);
+            p2PurpleBtn.setImageResource(R.drawable.purple);
+            p2OrangeBtn.setImageResource(R.drawable.orange);
+            //p2BrownBtn.setImageResource(R.drawable.brown);
         }
     }
 }
