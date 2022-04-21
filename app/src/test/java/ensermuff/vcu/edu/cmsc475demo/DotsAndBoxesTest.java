@@ -1,27 +1,11 @@
 package ensermuff.vcu.edu.cmsc475demo;
 
-import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Rule;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static java.sql.Types.NULL;
-
-import android.app.Instrumentation;
-
-import androidx.annotation.ContentView;
-import androidx.test.platform.app.InstrumentationRegistry;
-
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import ensermuff.vcu.edu.cmsc475demo.Activities.GameActivity;
-import ensermuff.vcu.edu.cmsc475demo.Activities.MainActivity;
 import ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity;
 
 /**
@@ -73,4 +57,5 @@ public class DotsAndBoxesTest {
 
         assertEquals(false, GameDataModel.checkArea(line));
     }
+
 }
