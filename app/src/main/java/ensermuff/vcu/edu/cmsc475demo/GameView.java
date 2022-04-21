@@ -22,6 +22,7 @@ import ensermuff.vcu.edu.cmsc475demo.Activities.SettingsActivity;
 
 public class GameView extends View {
 
+    public static String winner;
     Paint paint = new Paint();
     GameActivity activity;
     GameDataModel model;
@@ -193,6 +194,13 @@ public class GameView extends View {
                 paint.setColor(Color.parseColor(player2Color));
             canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
         } else {
+            if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
+                winner = "Player 1";
+            }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
+                winner = "Draw";
+            }else{
+                winner = "Player 2";
+            }
             activity.openWinningDialog();
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));

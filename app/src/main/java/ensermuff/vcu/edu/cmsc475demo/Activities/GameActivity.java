@@ -75,10 +75,10 @@ public class GameActivity extends AppCompatActivity {
         myView = (ConstraintLayout) findViewById(R.id.linearLayout);
         myView.addView(view);
 
-        if (model.checkGameOver()){
-            // call the winningdialog
-            openWinningDialog();
-        }
+//        if (model.checkGameOver()){
+//            // call the winningdialog
+//            openWinningDialog();
+//        }
     }
 
     @Override
@@ -167,7 +167,15 @@ public class GameActivity extends AppCompatActivity {
         winningDialog.setCancelable(true);
         //Mention the name of the custom dialog
         winningDialog.setContentView(R.layout.winningdialog);
+        TextView theWinner = findViewById(R.id.winner);
+        String winner = GameView.winner;
+        if (winner == "Player 1"){
+            theWinner.setText("Winner is Player 1");
+        }else {
+            theWinner.setText("Winner is Player 2");
+        }
         winningDialog.show();
+
     }
     /*public void openInfoDialog(){
         final Dialog menuDialog = new Dialog(GameActivity.this);
