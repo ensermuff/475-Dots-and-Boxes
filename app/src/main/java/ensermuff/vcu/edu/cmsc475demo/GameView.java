@@ -174,14 +174,15 @@ public class GameView extends View {
         paint.setTextSize(getWidth() / 10);
         paint.setTextAlign(Paint.Align.LEFT);
         paint.setColor(Color.WHITE);
-        canvas.drawText("Player1: " + model.getPlayers()[0].getScore(), 0,125,paint);
+        canvas.drawText(SettingsActivity.player1Name + ": " + model.getPlayers()[0].getScore(), 20,125,paint);
         paint.setTextSize((int) (getWidth() / 10 * 1.2));
 //        canvas.drawText(model.getPlayers()[0].getScore() + "", getWidth() / 10, getWidth() / 10 * 2, paint);
 
         paint.setTextAlign(Paint.Align.RIGHT);
         paint.setColor(Color.WHITE);
         paint.setTextSize(getWidth() / 10);
-        canvas.drawText("Player2: " + model.getPlayers()[1].getScore(), getWidth(),125,paint);
+        canvas.drawText(SettingsActivity.player2Name + ": " + model.getPlayers()[1].getScore(), getWidth() - 20,125,paint);
+//        canvas.drawText("Player2: " + model.getPlayers()[1].getScore(), getWidth(),125,paint);
         paint.setTextSize((int) (getWidth() / 10 * 1.2));
 //        canvas.drawText(model.getPlayers()[1].getScore() + "", getWidth() - getWidth() / 10, getWidth() / 10 * 2, paint);
 
@@ -194,13 +195,13 @@ public class GameView extends View {
                 paint.setColor(Color.parseColor(player2Color));
             canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
         } else {
-            if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
-                winner = "Player 1";
-            }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
-                winner = "Draw";
-            }else{
-                winner = "Player 2";
-            }
+//            if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
+//                winner = "Player 1";
+//            }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
+//                winner = "Draw";
+//            }else{
+//                winner = "Player 2";
+//            }
             activity.openWinningDialog();
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));

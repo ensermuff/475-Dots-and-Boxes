@@ -1,15 +1,19 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
 
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
 import ensermuff.vcu.edu.cmsc475demo.GameView;
@@ -20,7 +24,8 @@ public class SettingsActivity extends AppCompatActivity {
     public static String player1Color = "#E91414";
     public static String player2Color = "#1443E9";
     public static int gridSet = 5;
-    GameView view;
+    public static String player1Name = "Player1";
+    public static String player2Name = "Player2";
 
     public static boolean touchp1Red = true;
     public static boolean touchp1Blue = false;
@@ -270,7 +275,31 @@ public class SettingsActivity extends AppCompatActivity {
             GameDataModel.GRID = gridSet;
         });
 
+        playerNames();
     }
+
+    public void playerNames(){
+        EditText playerOne = findViewById(R.id.player1Name);
+        EditText playerTwo = findViewById(R.id.player2Name);
+        Button button = findViewById(R.id.confirm);
+        SharedPreferences mySharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
+        //SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SettingsActivity.this);
+        //SharedPreferences.Editor editor = sp.edit();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
+                player1Name = playerOne.getText().toString();
+                player2Name = playerTwo.getText().toString();
+                editor.putString(player1Name, playerOne.getText().toString());
+                editor.putString(player2Name, playerTwo.getText().toString());
+                editor.apply();   // Do not forget this to actually store the values
+
+            }
+        });
+    }
+
 
     public void colorCheck() {
         ImageButton p1RedBtn = findViewById(R.id.p1RedBtn);

@@ -6,24 +6,24 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/winner"
-        android:layout_width="181dp"
-        android:layout_height="64dp"
-        android:fontFamily="@font/sarpanch_semibold"
-        android:text="Winner is "
-        android:textAlignment="center"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.386"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+<!--    <TextView-->
+<!--        android:id="@+id/winner"-->
+<!--        android:layout_width="181dp"-->
+<!--        android:layout_height="64dp"-->
+<!--        android:fontFamily="@font/sarpanch_semibold"-->
+<!--        android:text="Winner is "-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.386"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.166" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/button"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Button" />-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </LinearLayout>

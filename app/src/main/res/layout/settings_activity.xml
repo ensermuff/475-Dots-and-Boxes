@@ -83,7 +83,7 @@
                     app:srcCompat="@drawable/red"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -98,7 +98,7 @@
                     app:srcCompat="@drawable/blue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -113,7 +113,7 @@
                     app:srcCompat="@drawable/green"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -128,7 +128,7 @@
                     app:srcCompat="@drawable/lightblue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -143,7 +143,7 @@
                     app:srcCompat="@drawable/purple"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -158,7 +158,7 @@
                     app:srcCompat="@drawable/orange"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -223,7 +223,7 @@
                     app:srcCompat="@drawable/red"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -238,7 +238,7 @@
                     app:srcCompat="@drawable/blue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -253,7 +253,7 @@
                     app:srcCompat="@drawable/green"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -268,7 +268,7 @@
                     app:srcCompat="@drawable/lightblue"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -283,7 +283,7 @@
                     app:srcCompat="@drawable/purple"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -298,7 +298,7 @@
                     app:srcCompat="@drawable/orange"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -362,7 +362,7 @@
                     android:text="4X4"
                     android:textStyle="bold" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -376,7 +376,7 @@
                     android:text="5X5"
                     android:textStyle="bold" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -395,6 +395,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="390dp"
         android:layout_height="76dp"
         android:layout_marginTop="175dp"
@@ -408,7 +409,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="4dp"
-            tools:layout_editor_absoluteY="25dp">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
                 android:id="@+id/music"
@@ -439,7 +440,7 @@
                     android:text="song 1"
                     android:textStyle="bold" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -453,7 +454,7 @@
                     android:text="song 2"
                     android:textStyle="bold" />
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.1" />
@@ -467,6 +468,73 @@
                     android:text="song 3"
                     android:textStyle="bold" />
             </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="399dp"
+        android:layout_height="149dp"
+        android:background="@drawable/box_light_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <LinearLayout
+            android:layout_width="396dp"
+            android:layout_height="123dp"
+            android:orientation="vertical"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-3dp">
+
+            <TextView
+                android:id="@+id/names"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:fontFamily="@font/syncopate"
+                android:padding="2dp"
+                android:text="Names"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:id="@+id/player1Name"
+                    android:layout_width="187dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Player1's name"
+                    android:maxLength="6"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/player2Name"
+                    android:layout_width="203dp"
+                    android:layout_height="45dp"
+                    android:ems="10"
+                    android:hint="Player2's name"
+                    android:maxLength="6"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="398dp"
+                android:layout_height="wrap_content"
+                android:text="Confirm"
+                android:textAlignment="center" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

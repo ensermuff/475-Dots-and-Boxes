@@ -167,13 +167,13 @@ public class GameActivity extends AppCompatActivity {
         winningDialog.setCancelable(true);
         //Mention the name of the custom dialog
         winningDialog.setContentView(R.layout.winningdialog);
-        TextView theWinner = findViewById(R.id.winner);
-        String winner = GameView.winner;
-        if (winner == "Player 1"){
-            theWinner.setText("Winner is Player 1");
-        }else {
-            theWinner.setText("Winner is Player 2");
-        }
+//        TextView theWinner = findViewById(R.id.winner);
+//        String winner = GameView.winner;
+//        if (winner == "Player 1"){
+//            theWinner.setText("Winner is Player 1");
+//        }else {
+//            theWinner.setText("Winner is Player 2");
+//        }
         winningDialog.show();
 
     }
