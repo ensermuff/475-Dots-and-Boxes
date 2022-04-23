@@ -124,9 +124,19 @@ public class GameDataModel {
     }
 
     private void setGridSize(Point screenSize) {
-        xMin = screenSize.x / 12;
-        yMin = screenSize.y / 10 * 3;
-        LENGTH = screenSize.x / 6;
+        if(GRID == 5) {
+            xMin = screenSize.x / 12;
+            yMin = screenSize.y / 10 * 3;
+            LENGTH = screenSize.x / 6;
+        }else if(GRID == 4){
+            xMin = screenSize.x / 6;
+            yMin = screenSize.y / 10 * 4;
+            LENGTH = screenSize.x / 6;
+        }else if(GRID == 3){
+            xMin = screenSize.x / 4;
+            yMin = screenSize.y / 10 * 4;
+            LENGTH = screenSize.x / 6;
+        }
     }
 
     public static void init() {
