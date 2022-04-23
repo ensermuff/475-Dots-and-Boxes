@@ -2,6 +2,7 @@ package ensermuff.vcu.edu.cmsc475demo.Activities;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -71,6 +72,8 @@ public class GameActivity extends AppCompatActivity {
         Log.d("ddamddi", " [SIZE]   WIDTH:" + screenSize.x + " HEIGHT:" + screenSize.y);
         model = new GameDataModel(screenSize);
         view = new GameView(this, model);
+        //player Names
+        setPlayerNames();
         // setContentView(view);
         myView = (ConstraintLayout) findViewById(R.id.linearLayout);
         myView.addView(view);
@@ -79,6 +82,26 @@ public class GameActivity extends AppCompatActivity {
 //            // call the winningdialog
 //            openWinningDialog();
 //        }
+    }
+
+    public void setTurn(String myTurn) {
+        TextView turn = findViewById(R.id.playerTurn);
+        if (myTurn.equals(SettingsActivity.player1Name + "'s Turn")){
+            turn.setText(myTurn);
+            turn.setTextColor(Color.parseColor(SettingsActivity.player1Color));
+        }else{
+            turn.setText(myTurn);
+            turn.setTextColor(Color.parseColor(SettingsActivity.player2Color));
+        }
+    }
+
+    public void setPlayerNames() {
+        TextView gamePlayer1 = findViewById(R.id.gameP1Name);
+        gamePlayer1.setText(SettingsActivity.player1Name + ": " + GameDataModel.getPlayers()[0].getScore());
+        gamePlayer1.setBackgroundColor(Color.parseColor(SettingsActivity.player1Color));
+        TextView gamePlayer2 = findViewById(R.id.gameP2Name);
+        gamePlayer2.setText(SettingsActivity.player2Name + ": " + GameDataModel.getPlayers()[1].getScore());
+        gamePlayer2.setBackgroundColor(Color.parseColor(SettingsActivity.player2Color));
     }
 
     @Override

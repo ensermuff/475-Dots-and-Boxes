@@ -162,29 +162,7 @@ public class GameView extends View {
                 canvas.drawCircle((p.getX()-Line.WIDTH/2) + 10, (p.getY()-Line.WIDTH/2) + 10,20, paint);
             }
         }
-
-        //Rectangles for background of text
-        paint.setColor(Color.parseColor(player1Color));
-        canvas.drawRect(0,0,700,200, paint);
-
-        paint.setColor(Color.parseColor(player2Color));
-        canvas.drawRect(740,0,1440,200, paint);
-
-
-        paint.setTextSize(getWidth() / 10);
-        paint.setTextAlign(Paint.Align.LEFT);
-        paint.setColor(Color.WHITE);
-        canvas.drawText(SettingsActivity.player1Name + ": " + model.getPlayers()[0].getScore(), 20,125,paint);
-        paint.setTextSize((int) (getWidth() / 10 * 1.2));
-//        canvas.drawText(model.getPlayers()[0].getScore() + "", getWidth() / 10, getWidth() / 10 * 2, paint);
-
-        paint.setTextAlign(Paint.Align.RIGHT);
-        paint.setColor(Color.WHITE);
-        paint.setTextSize(getWidth() / 10);
-        canvas.drawText(SettingsActivity.player2Name + ": " + model.getPlayers()[1].getScore(), getWidth() - 20,125,paint);
-//        canvas.drawText("Player2: " + model.getPlayers()[1].getScore(), getWidth(),125,paint);
-        paint.setTextSize((int) (getWidth() / 10 * 1.2));
-//        canvas.drawText(model.getPlayers()[1].getScore() + "", getWidth() - getWidth() / 10, getWidth() / 10 * 2, paint);
+        activity.setPlayerNames();
 
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setTextSize((int) (getWidth() / 10 * 1.2));
@@ -193,7 +171,9 @@ public class GameView extends View {
                 paint.setColor(Color.parseColor(player1Color));
             else
                 paint.setColor(Color.parseColor(player2Color));
-            canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
+            String myTurn = model.getTurn() % 2 == 0 ? SettingsActivity.player1Name + "'s Turn": SettingsActivity.player2Name + "'s Turn";
+            activity.setTurn(myTurn);
+//            canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
         } else {
 //            if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
 //                winner = "Player 1";
@@ -205,11 +185,11 @@ public class GameView extends View {
             activity.openWinningDialog();
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));
-            canvas.drawText("GAME OVER", getWidth() / 2, (int) (getWidth() / 10 * 3) + 25, paint);
+            canvas.drawText("GAME OVER", getWidth() / 2, (int) (getWidth() / 10 * 16) + 25, paint);
             if (model.isDrawGame)
                 canvas.drawText("DRAW", getWidth() / 2, (int) (getWidth() / 10 * 4), paint);
             else
-                canvas.drawText("" + (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore() ? player1 : player2) + " WIN!!!", getWidth() / 2, (int) (getWidth() / 10 * 4), paint);
+                canvas.drawText("" + (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore() ? player1 : player2) + " WIN!!!", getWidth() / 2, (int) (getWidth() / 10 * 17), paint);
 
             paint.setColor(Color.BLACK);
 //            canvas.drawText("RETRY??", getWidth()/2,getHeight() - getHeight()/12, paint);
