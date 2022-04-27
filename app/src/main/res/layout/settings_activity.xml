@@ -358,6 +358,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="#A1A7AF"
                     android:fontFamily="@font/syncopate"
                     android:text="4X4"
                     android:textStyle="bold" />
@@ -372,6 +373,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="#A1A7AF"
                     android:fontFamily="@font/syncopate"
                     android:text="5X5"
                     android:textStyle="bold" />
@@ -386,6 +388,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="#A1A7AF"
                     android:fontFamily="@font/syncopate"
                     android:text="6X6"
                     android:textStyle="bold" />
@@ -436,6 +439,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="#A1A7AF"
                     android:fontFamily="@font/syncopate"
                     android:text="song 1"
                     android:textStyle="bold" />
@@ -450,6 +454,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="#A1A7AF"
                     android:fontFamily="@font/syncopate"
                     android:text="song 2"
                     android:textStyle="bold" />
@@ -464,6 +469,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="#A1A7AF"
                     android:fontFamily="@font/syncopate"
                     android:text="song 3"
                     android:textStyle="bold" />
@@ -533,6 +539,7 @@
                 android:id="@+id/confirm"
                 android:layout_width="398dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#A1A7AF"
                 android:text="Confirm"
                 android:textAlignment="center" />
         </LinearLayout>

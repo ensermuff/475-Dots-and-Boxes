@@ -20,6 +20,7 @@ public class DotsAndBoxesTest {
     public void colorTest() {
         //SettingsActivity.player1Color
 
+
         assertEquals("#E91414",SettingsActivity.player1Color);
 
         SettingsActivity.player1Color = "#32E914";

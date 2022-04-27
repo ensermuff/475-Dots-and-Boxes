@@ -175,13 +175,18 @@ public class GameView extends View {
             activity.setTurn(myTurn);
 //            canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
         } else {
-//            if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
-//                winner = "Player 1";
-//            }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
-//                winner = "Draw";
-//            }else{
-//                winner = "Player 2";
-//            }
+            /*
+            GameActivity show = new GameActivity();
+            if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
+                show.showp1Winner();
+                //winner = "Player 1";
+            }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
+                show.showDraw();
+                //winner = "Draw";
+            }else{
+                show.showp2Winner();
+                //winner = "Player 2";
+            }*/
             activity.openWinningDialog();
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));

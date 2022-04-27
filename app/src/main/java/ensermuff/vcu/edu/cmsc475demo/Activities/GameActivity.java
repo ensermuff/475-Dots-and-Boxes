@@ -32,6 +32,8 @@ public class GameActivity extends AppCompatActivity {
     Intent intent;
     MediaPlayer mySongs;
     ConstraintLayout myView;
+    TextView theWinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -45,6 +47,7 @@ public class GameActivity extends AppCompatActivity {
         mySongs = MediaPlayer.create(getApplicationContext(), R.raw.schemingweasal);
         mySongs.setLooping(true);
         mySongs.start();
+
 
 
         Button myMenu = findViewById(R.id.menu);
@@ -190,13 +193,18 @@ public class GameActivity extends AppCompatActivity {
         winningDialog.setCancelable(true);
         //Mention the name of the custom dialog
         winningDialog.setContentView(R.layout.winningdialog);
-//        TextView theWinner = findViewById(R.id.winner);
-//        String winner = GameView.winner;
-//        if (winner == "Player 1"){
-//            theWinner.setText("Winner is Player 1");
-//        }else {
-//            theWinner.setText("Winner is Player 2");
-//        }
+
+        theWinner = (TextView) winningDialog.findViewById(R.id.textViewWin);
+        //TextView theWinner = findViewById(R.id.winner);
+        String winner = GameView.winner;
+        if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
+            theWinner.setText("Winner is Player 1");
+        }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
+            theWinner.setText("Draw");
+        }else{
+            theWinner.setText("Winner is Player 2");
+        }
+
         winningDialog.show();
 
     }
