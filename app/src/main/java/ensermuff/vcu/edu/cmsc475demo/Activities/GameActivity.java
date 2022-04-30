@@ -27,6 +27,8 @@ public class GameActivity extends AppCompatActivity {
     public static String player1 = "player1";
     public static String player2 = "player2";
     public static boolean infoGame = true;
+    String player1Color = SettingsActivity.player1Color;
+    String player2Color = SettingsActivity.player2Color;
     GameView view;
     GameDataModel model;
     Intent intent;
@@ -187,12 +189,25 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void openWinningDialog() {
+        int scorep1 = model.getPlayers()[0].getScore();
+        int scorep2 = model.getPlayers()[1].getScore();
         final Dialog winningDialog = new Dialog(GameActivity.this);
         //added custom view to dialog with no title
         winningDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         winningDialog.setCancelable(true);
         //Mention the name of the custom dialog
         winningDialog.setContentView(R.layout.winningdialog);
+
+        //Sets up the background colors for scores
+        TextView player1Score = (TextView) winningDialog.findViewById(R.id.dialogWin_scorep1);
+        TextView player2Score = (TextView) winningDialog.findViewById(R.id.dialogWin_scorep2);
+
+        //Sets score and background of the players scores
+        player1Score.setText(String.valueOf(scorep1));
+        player1Score.setBackgroundColor(Color.parseColor(player1Color));
+
+        player2Score.setText(String.valueOf(scorep2));
+        player2Score.setBackgroundColor(Color.parseColor(player2Color));
 
         theWinner = (TextView) winningDialog.findViewById(R.id.textViewWin);
         //TextView theWinner = findViewById(R.id.winner);
