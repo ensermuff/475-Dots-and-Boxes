@@ -1,12 +1,16 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,8 +19,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.res.ResourcesCompat;
 
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
 import ensermuff.vcu.edu.cmsc475demo.GameView;
@@ -27,11 +33,15 @@ public class GameActivity extends AppCompatActivity {
     public static String player1 = "player1";
     public static String player2 = "player2";
     public static boolean infoGame = true;
+    String player1Color = SettingsActivity.player1Color;
+    String player2Color = SettingsActivity.player2Color;
     GameView view;
     GameDataModel model;
     Intent intent;
     MediaPlayer mySongs;
     ConstraintLayout myView;
+    TextView theWinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -45,6 +55,7 @@ public class GameActivity extends AppCompatActivity {
         mySongs = MediaPlayer.create(getApplicationContext(), R.raw.schemingweasal);
         mySongs.setLooping(true);
         mySongs.start();
+
 
 
         Button myMenu = findViewById(R.id.menu);
@@ -95,12 +106,20 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void setPlayerNames() {
         TextView gamePlayer1 = findViewById(R.id.gameP1Name);
-        gamePlayer1.setText(SettingsActivity.player1Name + ": " + GameDataModel.getPlayers()[0].getScore());
+        Typeface typeface = getResources().getFont(R.font.syncopate_bold);
+        gamePlayer1.setTypeface(typeface);
+        gamePlayer1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 28);
+        gamePlayer1.setText(SettingsActivity.player1Name + ":\n" + GameDataModel.getPlayers()[0].getScore());
         gamePlayer1.setBackgroundColor(Color.parseColor(SettingsActivity.player1Color));
+
+
         TextView gamePlayer2 = findViewById(R.id.gameP2Name);
-        gamePlayer2.setText(SettingsActivity.player2Name + ": " + GameDataModel.getPlayers()[1].getScore());
+        gamePlayer2.setTypeface(typeface);
+        gamePlayer2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 28);
+        gamePlayer2.setText(SettingsActivity.player2Name + ":\n" + GameDataModel.getPlayers()[1].getScore());
         gamePlayer2.setBackgroundColor(Color.parseColor(SettingsActivity.player2Color));
     }
 
@@ -184,19 +203,59 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void openWinningDialog() {
+        int scorep1 = model.getPlayers()[0].getScore();
+        int scorep2 = model.getPlayers()[1].getScore();
+
         final Dialog winningDialog = new Dialog(GameActivity.this);
         //added custom view to dialog with no title
         winningDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         winningDialog.setCancelable(true);
         //Mention the name of the custom dialog
         winningDialog.setContentView(R.layout.winningdialog);
-//        TextView theWinner = findViewById(R.id.winner);
-//        String winner = GameView.winner;
-//        if (winner == "Player 1"){
-//            theWinner.setText("Winner is Player 1");
-//        }else {
-//            theWinner.setText("Winner is Player 2");
-//        }
+
+        //Sets up the background colors for scores
+        TextView player1Score = (TextView) winningDialog.findViewById(R.id.dialogWin_scorep1);
+        TextView player2Score = (TextView) winningDialog.findViewById(R.id.dialogWin_scorep2);
+
+        //Sets score and background of the players scores
+        player1Score.setText(String.valueOf(scorep1));
+        player1Score.setBackgroundColor(Color.parseColor(player1Color));
+
+        player2Score.setText(String.valueOf(scorep2));
+        player2Score.setBackgroundColor(Color.parseColor(player2Color));
+
+        theWinner = (TextView) winningDialog.findViewById(R.id.textViewWin);
+        //TextView theWinner = findViewById(R.id.winner);
+        String winner = GameView.winner;
+        if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
+            theWinner.setText("Winner is " + SettingsActivity.player1Name);
+            theWinner.setTextColor(Color.parseColor(player1Color));
+        }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
+            theWinner.setText("Draw");
+            theWinner.setTextColor(Color.GRAY);
+        }else{
+            theWinner.setText("Winner is " + SettingsActivity.player2Name);
+            theWinner.setTextColor(Color.parseColor(player2Color));
+        }
+
+        ImageButton winDialogHomeBtn = winningDialog.findViewById(R.id.dialogWin_home);
+        ImageButton winDialogResetBtn = winningDialog.findViewById(R.id.dialogWin_reset);
+
+        winDialogHomeBtn.setOnClickListener((v) ->{
+            infoGame = true;
+            Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+            mySongs.stop();
+            startActivity(startIntent);
+
+        });
+
+        winDialogResetBtn.setOnClickListener((v) ->{
+            Intent startIntent = new Intent(getApplicationContext(), GameActivity.class);
+            mySongs.stop();
+            startActivity(startIntent);
+
+        });
+
         winningDialog.show();
 
     }

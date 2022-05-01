@@ -29,6 +29,8 @@ import org.junit.runner.RunWith;
 
 import ensermuff.vcu.edu.cmsc475demo.R;
 
+//This is using espresso to test the input of the UI classes
+
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class UITest {

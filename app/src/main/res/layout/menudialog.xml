@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -14,41 +15,44 @@
             android:id="@+id/dialog_sound"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/sound_on" />
+            app:srcCompat="@drawable/sound_on"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
         <ImageButton
             android:id="@+id/dialog_music"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/music_on" />
+            app:srcCompat="@drawable/music_on"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/dialog_info"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/info" />
+            app:srcCompat="@drawable/info"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
@@ -67,7 +71,8 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/home" />
+            app:srcCompat="@drawable/home"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/dialog_reset"
@@ -79,7 +84,8 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/reset" />
+            app:srcCompat="@drawable/reset"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/dialog_resume"
@@ -91,7 +97,8 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/resume" />
+            app:srcCompat="@drawable/resume"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
