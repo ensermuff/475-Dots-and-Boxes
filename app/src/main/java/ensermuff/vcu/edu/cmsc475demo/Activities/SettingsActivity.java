@@ -1,29 +1,18 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceManager;
 
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
-import ensermuff.vcu.edu.cmsc475demo.GameView;
 import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -49,15 +38,19 @@ public class SettingsActivity extends AppCompatActivity {
     public static boolean touchp2Purple = false;
     public static boolean touchp2Orange = false;
     public static boolean touchp2Brown = false;
-
     public String tmpColor;
+    public static int songNumber=1;
+
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-    RadioGroup radioGroup;
     RadioButton grid6x6;
     RadioButton grid5x5;
     RadioButton grid4x4;
+    RadioButton song1;
+    RadioButton song2;
+    RadioButton song3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -274,25 +267,45 @@ public class SettingsActivity extends AppCompatActivity {
         grid5x5 = findViewById(R.id.radiobtn5x5);
         grid4x4 = findViewById(R.id.radiobtn4x4);
 
-        loadRadioButtons();
+        loadGridChoices();
 
         //Sets the value of the grid
         grid6x6.setOnClickListener((v) -> {
             gridSet = 5;
             GameDataModel.GRID = gridSet;
-            saveRadioButtons();
+            saveGridChoices();
         });
         grid5x5.setOnClickListener((v) -> {
             gridSet = 4;
             GameDataModel.GRID = gridSet;
-            saveRadioButtons();
+            saveGridChoices();
         });
         grid4x4.setOnClickListener((v) -> {
             gridSet = 3;
             GameDataModel.GRID = gridSet;
-            saveRadioButtons();
-
+            saveGridChoices();
         });
+
+        song1 = findViewById(R.id.song1);
+        song2 = findViewById(R.id.song2);
+        song3 = findViewById(R.id.song3);
+
+        loadSongChoices();
+
+        //Select the music
+        song1.setOnClickListener(v -> {
+            songNumber = 1;
+            saveSongChoices();
+        });
+        song2.setOnClickListener(v -> {
+            songNumber = 2;
+            saveSongChoices();
+        });
+        song3.setOnClickListener(v -> {
+            songNumber = 3;
+            saveSongChoices();
+        });
+
         playerNames();
     }
 
@@ -312,20 +325,32 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
     }
-    public void saveRadioButtons(){
-        SharedPreferences.Editor editor = getSharedPreferences("pref", MODE_PRIVATE).edit();
+    public void saveGridChoices(){
+        SharedPreferences.Editor editor = getSharedPreferences("grid", MODE_PRIVATE).edit();
         editor.putBoolean("gridSize4x4", grid4x4.isChecked());
         editor.putBoolean("gridSize5x5", grid5x5.isChecked());
         editor.putBoolean("gridSize6x6", grid6x6.isChecked());
         editor.apply();
     }
-    public void loadRadioButtons(){
-        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);    //PreferenceManager.getDefaultSharedPreferences(this);
+    public void loadGridChoices(){
+        sharedPreferences = getSharedPreferences("grid", MODE_PRIVATE);    //PreferenceManager.getDefaultSharedPreferences(this);
         grid4x4.setChecked(sharedPreferences.getBoolean("gridSize4x4", false));
         grid5x5.setChecked(sharedPreferences.getBoolean("gridSize5x5", false));
         grid6x6.setChecked(sharedPreferences.getBoolean("gridSize6x6", true));
     }
-
+    public void saveSongChoices(){
+        SharedPreferences.Editor editor = getSharedPreferences("song", MODE_PRIVATE).edit();
+        editor.putBoolean("song1", song1.isChecked());
+        editor.putBoolean("song2", song2.isChecked());
+        editor.putBoolean("song3", song3.isChecked());
+        editor.apply();
+    }
+    public void loadSongChoices(){
+        sharedPreferences = getSharedPreferences("song", MODE_PRIVATE);    //PreferenceManager.getDefaultSharedPreferences(this);
+        song1.setChecked(sharedPreferences.getBoolean("song1", true));
+        song2.setChecked(sharedPreferences.getBoolean("song2", false));
+        song3.setChecked(sharedPreferences.getBoolean("song3", false));
+    }
 
 
 
