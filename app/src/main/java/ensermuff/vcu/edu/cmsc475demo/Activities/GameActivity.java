@@ -24,6 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.res.ResourcesCompat;
 
+import java.util.Set;
+
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
 import ensermuff.vcu.edu.cmsc475demo.GameView;
 import ensermuff.vcu.edu.cmsc475demo.R;
@@ -42,6 +44,7 @@ public class GameActivity extends AppCompatActivity {
     ConstraintLayout myView;
     TextView theWinner;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -52,7 +55,13 @@ public class GameActivity extends AppCompatActivity {
         player1 = intent.getStringExtra("player1");
         player2 = intent.getStringExtra("player2");
 
-        mySongs = MediaPlayer.create(getApplicationContext(), R.raw.schemingweasal);
+        if (SettingsActivity.songNumber == 1){
+            mySongs = MediaPlayer.create(getApplicationContext(), R.raw.schemingweasal);
+        }else if (SettingsActivity.songNumber == 2){
+            mySongs = MediaPlayer.create(getApplicationContext(), R.raw.nospampolka);
+        }else if (SettingsActivity.songNumber == 3){
+            mySongs = MediaPlayer.create(getApplicationContext(), R.raw.techlive);
+        }
         mySongs.setLooping(true);
         mySongs.start();
 
