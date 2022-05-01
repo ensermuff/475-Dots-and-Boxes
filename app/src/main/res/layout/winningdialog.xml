@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/winner"-->
-<!--        android:layout_width="181dp"-->
-<!--        android:layout_height="64dp"-->
-<!--        android:fontFamily="@font/sarpanch_semibold"-->
-<!--        android:text="Winner is "-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="34sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.386"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.166" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/winner"-->
+    <!--        android:layout_width="181dp"-->
+    <!--        android:layout_height="64dp"-->
+    <!--        android:fontFamily="@font/sarpanch_semibold"-->
+    <!--        android:text="Winner is "-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="34sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.386"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.166" />-->
 
     <TextView
         android:id="@+id/textViewWin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/syncopate"
         android:gravity="center"
-        android:text="@string/win" />
+        android:text="@string/win"
+        android:textSize="32dp"
+        android:textStyle="bold|italic" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,39 +41,53 @@
             android:id="@+id/dialogWin_scorep1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:textColor="#ffffff"
             android:gravity="center"
-            android:text="Score" />
+            android:text="Score"
+            android:textColor="#ffffff"
+            android:textSize="32dp" />
 
         <TextView
             android:id="@+id/dialogWin_scorep2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:textColor="#ffffff"
             android:gravity="center"
-            android:text="Score" />
+            android:text="Score"
+            android:textColor="#ffffff"
+            android:textSize="32dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/dialogWin_home"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:text="Button" />
+            android:background="@drawable/home"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <Button
-            android:id="@+id/dialogWin_restart"
+        <ImageButton
+            android:id="@+id/dialogWin_reset"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:text="@string/button" />
+            android:background="@drawable/reset"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
 </LinearLayout>

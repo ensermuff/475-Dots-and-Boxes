@@ -214,11 +214,32 @@ public class GameActivity extends AppCompatActivity {
         String winner = GameView.winner;
         if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
             theWinner.setText("Winner is Player 1");
+            theWinner.setTextColor(Color.parseColor(player1Color));
         }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
             theWinner.setText("Draw");
+            theWinner.setTextColor(Color.GRAY);
         }else{
             theWinner.setText("Winner is Player 2");
+            theWinner.setTextColor(Color.parseColor(player2Color));
         }
+
+        ImageButton winDialogHomeBtn = winningDialog.findViewById(R.id.dialogWin_home);
+        ImageButton winDialogResetBtn = winningDialog.findViewById(R.id.dialogWin_reset);
+
+        winDialogHomeBtn.setOnClickListener((v) ->{
+            infoGame = true;
+            Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+            mySongs.stop();
+            startActivity(startIntent);
+
+        });
+
+        winDialogResetBtn.setOnClickListener((v) ->{
+            Intent startIntent = new Intent(getApplicationContext(), GameActivity.class);
+            mySongs.stop();
+            startActivity(startIntent);
+
+        });
 
         winningDialog.show();
 
