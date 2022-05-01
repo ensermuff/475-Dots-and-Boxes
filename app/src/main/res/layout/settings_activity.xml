@@ -37,7 +37,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="390dp"
-        android:layout_height="76dp"
+        android:layout_height="88dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -182,7 +182,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout9"
         android:layout_width="390dp"
-        android:layout_height="76dp"
+        android:layout_height="88dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/box_light_purple"
         app:layout_constraintEnd_toEndOf="parent"
@@ -323,7 +323,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout7"
-        android:layout_width="392dp"
+        android:layout_width="390dp"
         android:layout_height="88dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/box_light_purple"
@@ -377,8 +377,11 @@
                         android:layout_height="48dp"
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
+                        android:fontFamily="@font/syncopate_bold"
                         android:text="@string/fourbyfour"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
 
                     <androidx.legacy.widget.Space
                         android:layout_width="wrap_content"
@@ -392,8 +395,11 @@
                         android:layout_height="48dp"
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
+                        android:fontFamily="@font/syncopate_bold"
                         android:text="@string/fivebyfive"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
 
                     <androidx.legacy.widget.Space
                         android:layout_width="wrap_content"
@@ -406,8 +412,11 @@
                         android:layout_height="48dp"
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
+                        android:fontFamily="@font/syncopate_bold"
                         android:text="@string/sixbysix"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </RadioGroup>
             </LinearLayout>
         </LinearLayout>
@@ -416,7 +425,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="390dp"
-        android:layout_height="76dp"
+        android:layout_height="88dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/box_light_purple"
         app:layout_constraintEnd_toEndOf="parent"
@@ -468,8 +477,11 @@
                         android:layout_height="48dp"
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
+                        android:fontFamily="@font/syncopate_bold"
                         android:text="Song 1"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
 
                     <androidx.legacy.widget.Space
                         android:layout_width="wrap_content"
@@ -483,8 +495,11 @@
                         android:layout_height="48dp"
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
+                        android:fontFamily="@font/syncopate_bold"
                         android:text="Song 2"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
 
                     <androidx.legacy.widget.Space
                         android:layout_width="wrap_content"
@@ -497,8 +512,11 @@
                         android:layout_height="48dp"
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
+                        android:fontFamily="@font/syncopate_bold"
                         android:text="Song 3"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </RadioGroup>
                 <!--                <Button-->
                 <!--                    android:id="@+id/song1"-->
@@ -545,7 +563,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout10"
-        android:layout_width="393dp"
+        android:layout_width="390dp"
         android:layout_height="145dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/box_light_purple"
@@ -606,9 +624,12 @@
                 android:id="@+id/confirm"
                 android:layout_width="398dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#A1A7AF"
+                android:backgroundTint="@android:color/holo_purple"
+                android:fontFamily="@font/syncopate_bold"
                 android:text="Confirm"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
