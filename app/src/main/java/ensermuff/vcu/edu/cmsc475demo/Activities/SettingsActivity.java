@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -49,6 +51,13 @@ public class SettingsActivity extends AppCompatActivity {
     public static boolean touchp2Brown = false;
 
     public String tmpColor;
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    RadioGroup radioGroup;
+    RadioButton grid6x6;
+    RadioButton grid5x5;
+    RadioButton grid4x4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -261,40 +270,38 @@ public class SettingsActivity extends AppCompatActivity {
             colorCheck();
         });
 
+        grid6x6 = findViewById(R.id.radiobtn6x6);
+        grid5x5 = findViewById(R.id.radiobtn5x5);
+        grid4x4 = findViewById(R.id.radiobtn4x4);
+
+        loadRadioButtons();
+
         //Sets the value of the grid
-        Button grid6x6 = findViewById(R.id.btn6x6);
         grid6x6.setOnClickListener((v) -> {
             gridSet = 5;
             GameDataModel.GRID = gridSet;
         });
-
-        Button grid5x5 = findViewById(R.id.btn5x5);
         grid5x5.setOnClickListener((v) -> {
             gridSet = 4;
             GameDataModel.GRID = gridSet;
         });
-
-        Button grid4x4 = findViewById(R.id.btn4x4);
         grid4x4.setOnClickListener((v) -> {
             gridSet = 3;
             GameDataModel.GRID = gridSet;
         });
-
         playerNames();
+        saveRadioButtons();
     }
 
     public void playerNames(){
+        editor = getSharedPreferences("save", MODE_PRIVATE).edit();
         EditText playerOne = findViewById(R.id.player1Name);
         EditText playerTwo = findViewById(R.id.player2Name);
         Button button = findViewById(R.id.confirm);
-        SharedPreferences mySharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
-        //SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SettingsActivity.this);
-        //SharedPreferences.Editor editor = sp.edit();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
+//                SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
                 player1Name = playerOne.getText().toString();
                 player2Name = playerTwo.getText().toString();
                 editor.putString(player1Name, playerOne.getText().toString());
@@ -304,6 +311,21 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
     }
+    public void saveRadioButtons(){
+        SharedPreferences.Editor editor = getSharedPreferences("pref", MODE_PRIVATE).edit();
+        editor.putBoolean("gridSize4x4", grid4x4.isChecked());
+        editor.putBoolean("gridSize5x5", grid5x5.isChecked());
+        editor.putBoolean("gridSize6x6", grid6x6.isChecked());
+        editor.apply();
+    }
+    public void loadRadioButtons(){
+        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);    //PreferenceManager.getDefaultSharedPreferences(this);
+        grid4x4.setChecked(sharedPreferences.getBoolean("gridSize4x4", false));
+        grid5x5.setChecked(sharedPreferences.getBoolean("gridSize5x5", false));
+        grid6x6.setChecked(sharedPreferences.getBoolean("gridSize6x6", true));
+    }
+
+
 
 
     public void colorCheck() {

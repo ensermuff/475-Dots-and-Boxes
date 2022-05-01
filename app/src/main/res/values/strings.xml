@@ -16,6 +16,12 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+<<<<<<< HEAD
+    <string name="fivebyfive">5X5</string>
+    <string name="sixbysix">6X6</string>
+    <string name="fourbyfour">4X4</string>
+=======
     <string name="win">Win</string>
     <string name="button">Button</string>
+>>>>>>> 094eb139d01c4538ed366a35b12f17222e873420
 </resources>
