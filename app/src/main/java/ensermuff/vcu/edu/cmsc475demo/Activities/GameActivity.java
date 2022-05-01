@@ -55,14 +55,14 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        Button myUndo = findViewById(R.id.undoTurn);
-        myUndo.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view2) {
-                view.undo();
-                // redraw the canvas over again with the updated arrayList of type line and updated arrayList of type area
-            }
-        });
+//        Button myUndo = findViewById(R.id.undoTurn);
+//        myUndo.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view2) {
+//                view.undo();
+//                // redraw the canvas over again with the updated arrayList of type line and updated arrayList of type area
+//            }
+//        });
 
 
         Display display = getWindowManager().getDefaultDisplay();
