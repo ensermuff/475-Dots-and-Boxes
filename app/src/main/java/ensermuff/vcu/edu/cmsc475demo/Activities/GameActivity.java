@@ -191,6 +191,7 @@ public class GameActivity extends AppCompatActivity {
     public void openWinningDialog() {
         int scorep1 = model.getPlayers()[0].getScore();
         int scorep2 = model.getPlayers()[1].getScore();
+
         final Dialog winningDialog = new Dialog(GameActivity.this);
         //added custom view to dialog with no title
         winningDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -213,13 +214,13 @@ public class GameActivity extends AppCompatActivity {
         //TextView theWinner = findViewById(R.id.winner);
         String winner = GameView.winner;
         if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
-            theWinner.setText("Winner is Player 1");
+            theWinner.setText("Winner is " + SettingsActivity.player1Name);
             theWinner.setTextColor(Color.parseColor(player1Color));
         }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
             theWinner.setText("Draw");
             theWinner.setTextColor(Color.GRAY);
         }else{
-            theWinner.setText("Winner is Player 2");
+            theWinner.setText("Winner is " + SettingsActivity.player2Name);
             theWinner.setTextColor(Color.parseColor(player2Color));
         }
 
