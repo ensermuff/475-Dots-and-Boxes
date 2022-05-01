@@ -8,12 +8,14 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -66,6 +68,13 @@ public class GameView extends View {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        /*Typeface face = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            face = (getContext().getResources().getFont(R.font.syncopate_bold));
+            ((TextView)decorView).setTypeface(face);
+        }*/
+
+
         /*player1 = GameActivity.player1;
         player2 = GameActivity.player2;
         if (player1 == null) {
@@ -75,8 +84,8 @@ public class GameView extends View {
             player2 = "Player2";
         }*/
 
-        player1 = "Player1";
-        player2 = "Player2";
+        player1 = "Player 1";
+        player2 = "Player 2";
 
         paint.setColor(Color.WHITE);
         paint.setStrokeWidth(8);
