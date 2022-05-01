@@ -280,17 +280,20 @@ public class SettingsActivity extends AppCompatActivity {
         grid6x6.setOnClickListener((v) -> {
             gridSet = 5;
             GameDataModel.GRID = gridSet;
+            saveRadioButtons();
         });
         grid5x5.setOnClickListener((v) -> {
             gridSet = 4;
             GameDataModel.GRID = gridSet;
+            saveRadioButtons();
         });
         grid4x4.setOnClickListener((v) -> {
             gridSet = 3;
             GameDataModel.GRID = gridSet;
+            saveRadioButtons();
+
         });
         playerNames();
-        saveRadioButtons();
     }
 
     public void playerNames(){
@@ -301,13 +304,11 @@ public class SettingsActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
                 player1Name = playerOne.getText().toString();
                 player2Name = playerTwo.getText().toString();
                 editor.putString(player1Name, playerOne.getText().toString());
                 editor.putString(player2Name, playerTwo.getText().toString());
                 editor.apply();   // Do not forget this to actually store the values
-
             }
         });
     }
