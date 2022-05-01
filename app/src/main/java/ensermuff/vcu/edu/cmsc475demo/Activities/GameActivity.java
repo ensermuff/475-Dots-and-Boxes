@@ -1,12 +1,16 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,8 +19,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.res.ResourcesCompat;
 
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
 import ensermuff.vcu.edu.cmsc475demo.GameView;
@@ -100,12 +106,20 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void setPlayerNames() {
         TextView gamePlayer1 = findViewById(R.id.gameP1Name);
-        gamePlayer1.setText(SettingsActivity.player1Name + ": " + GameDataModel.getPlayers()[0].getScore());
+        Typeface typeface = getResources().getFont(R.font.syncopate_bold);
+        gamePlayer1.setTypeface(typeface);
+        gamePlayer1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 28);
+        gamePlayer1.setText(SettingsActivity.player1Name + ":\n" + GameDataModel.getPlayers()[0].getScore());
         gamePlayer1.setBackgroundColor(Color.parseColor(SettingsActivity.player1Color));
+
+
         TextView gamePlayer2 = findViewById(R.id.gameP2Name);
-        gamePlayer2.setText(SettingsActivity.player2Name + ": " + GameDataModel.getPlayers()[1].getScore());
+        gamePlayer2.setTypeface(typeface);
+        gamePlayer2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 28);
+        gamePlayer2.setText(SettingsActivity.player2Name + ":\n" + GameDataModel.getPlayers()[1].getScore());
         gamePlayer2.setBackgroundColor(Color.parseColor(SettingsActivity.player2Color));
     }
 
