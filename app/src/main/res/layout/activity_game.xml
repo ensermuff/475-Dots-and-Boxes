@@ -5,8 +5,10 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#0FFFFFFF"
+    android:background="@drawable/game_background"
     tools:context=".Activities.GameActivity">
+<!--    android:backgroundTint="#0FFFFFFF"-->
+
 
 <!--Not functioning properly-->
 <!--    <Button-->

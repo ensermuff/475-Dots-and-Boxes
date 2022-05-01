@@ -87,7 +87,7 @@ public class GameView extends View {
         player1 = "Player 1";
         player2 = "Player 2";
 
-        paint.setColor(Color.WHITE);
+        //paint.setColor(Color.WHITE);
         paint.setStrokeWidth(8);
         setMinimumHeight(100);
         this.setFocusableInTouchMode(true);
