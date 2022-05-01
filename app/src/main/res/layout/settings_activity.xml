@@ -478,7 +478,7 @@
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
                         android:fontFamily="@font/syncopate_bold"
-                        android:text="Song 1"
+                        android:text="Piano"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
@@ -496,7 +496,7 @@
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
                         android:fontFamily="@font/syncopate_bold"
-                        android:text="Song 2"
+                        android:text="Polka"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
@@ -513,7 +513,7 @@
                         android:background="@drawable/bg_radio_button"
                         android:button="@null"
                         android:fontFamily="@font/syncopate_bold"
-                        android:text="Song 3"
+                        android:text="Techno"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
