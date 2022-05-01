@@ -158,7 +158,7 @@
                             android:fontFamily="@font/sarpanch_medium"
                             android:text="Playing squares is easy!\nJust click a space in between two dots to create a line.\nThe first player to complete a box wins that square\nand gets to go again.\nThe player who captures the most squares\nat the end is the winner!"
                             android:textAlignment="center"
-                            android:textSize="20sp" />
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -262,9 +262,9 @@
                             android:layout_weight="1"
                             android:background="#FFFFFF"
                             android:fontFamily="@font/sarpanch_medium"
-                            android:text="VCU Student Group Project\nTeam:\nFiraol Ensermu\nAlexander Harris\nDustin Nash\nMcCrae Smith\nScheming Weasel (faster version) Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/"
+                            android:text="Team:\nFiraol Ensermu, Alexander Harris\nDustin Nash, McCrae Smith\nScheming Weasel (faster version) Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/\nNo Spam Polka by Kevin MacLeod Link: https://incompetech.filmmusic.io/song/4139-no-spam-polka License: https://filmmusic.io/standard-license\nTech Live by Kevin MacLeod Link: https://incompetech.filmmusic.io/song/4463-tech-live License: https://filmmusic.io/standard-license"
                             android:textAlignment="center"
-                            android:textSize="16sp" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
