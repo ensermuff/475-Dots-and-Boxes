@@ -40,7 +40,7 @@ public class GameActivity extends AppCompatActivity {
     public static String player1 = "player1";
     public static String player2 = "player2";
     public static boolean infoGame = true;
-    public static ArrayList<String> historyList;
+    public static ArrayList<String> historyList = new ArrayList<>();
     String player1Color = SettingsActivity.player1Color;
     String player2Color = SettingsActivity.player2Color;
     GameView view;
@@ -285,6 +285,7 @@ public class GameActivity extends AppCompatActivity {
 
         ImageButton winDialogHomeBtn = winningDialog.findViewById(R.id.dialogWin_home);
         ImageButton winDialogResetBtn = winningDialog.findViewById(R.id.dialogWin_reset);
+        ListView listView = findViewById(R.id.listHistory);
 
         winDialogHomeBtn.setOnClickListener((v) ->{
             infoGame = true;
@@ -292,10 +293,12 @@ public class GameActivity extends AppCompatActivity {
             String addp1Score = String.valueOf(model.getPlayers()[0].getScore());
             String addp2Score = String.valueOf(model.getPlayers()[1].getScore());
 
-            //Adding score to history
-            historyList = new ArrayList<>();
-            historyList.add("1");
-            //HistoryActivity.addHistory(addp1Score+" "+ addp2Score);
+            if(historyList.size() == 5){
+                HistoryActivity.removeHistory(SettingsActivity.player1Name+"= "+addp1Score+" "+SettingsActivity.player2Name+"= "+addp2Score);
+            }else{
+                //Adding score to history
+                HistoryActivity.addHistory(SettingsActivity.player1Name+"= "+addp1Score+" "+SettingsActivity.player2Name+"= "+addp2Score);
+            }
 
             Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
             mySongs.stop();

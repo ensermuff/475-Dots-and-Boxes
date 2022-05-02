@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageView firstImage = findViewById(R.id.SquaresLogo);
-        int imageResource = getResources().getIdentifier("@drawable/squares", null,this.getPackageName());
+        int imageResource = getResources().getIdentifier("@drawable/squares_logo", null,this.getPackageName());
         firstImage.setImageResource(imageResource);
 
         ImageView secondImage = findViewById(R.id.Vcu);
