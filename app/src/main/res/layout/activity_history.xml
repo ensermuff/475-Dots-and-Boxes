@@ -85,10 +85,13 @@
             android:layout_weight="0.1" />
 
         <ListView
+            android:id="@+id/listHistory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listHistory"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:divider="@color/white"
+            android:dividerHeight="2dp"
+            android:paddingTop="5dp" />
 
         <androidx.legacy.widget.Space
             android:layout_width="match_parent"

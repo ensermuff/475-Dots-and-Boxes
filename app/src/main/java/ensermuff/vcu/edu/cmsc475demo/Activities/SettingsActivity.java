@@ -1,10 +1,12 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -323,6 +325,8 @@ public class SettingsActivity extends AppCompatActivity {
                 editor.putString(player1Name, playerOne.getText().toString());
                 editor.putString(player2Name, playerTwo.getText().toString());
                 editor.apply();   // Do not forget this to actually store the values
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(playerOne.getWindowToken(), 0);
             }
         });
     }
