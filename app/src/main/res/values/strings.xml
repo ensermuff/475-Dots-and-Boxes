@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CMSC 475 Demo</string>
+    <string name="app_name">Squares</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
