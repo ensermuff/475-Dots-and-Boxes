@@ -139,6 +139,12 @@ public class GameActivity extends AppCompatActivity {
             mySongs.start();
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        mySongs.stop();
+    }
+
     public void openDialog() {
         final Dialog menuDialog = new Dialog(GameActivity.this);
         //added custom view to dialog with no title
