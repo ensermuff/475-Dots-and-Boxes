@@ -101,40 +101,11 @@ public class GameView extends View {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void onDraw(Canvas canvas) {
-//        for(Area area : areas){
-//            canvas.drawRect(area.getSquare(), area.getPaint());
-//        }
-
         for (Area[] areas : model.getAreas()) {
             for (Area area : areas) {
                 area.draw(canvas);
             }
         }
-        /*
-        try to add areas to the arraylist of type Area
-         */
-//        Area myArea = new Area();
-//        if (myArea.getOwner() == 0)
-//            paint.setColor(Color.WHITE);
-//        else if (myArea.getOwner() == 1)
-//            paint.setColor(Color.RED);
-//        else if (myArea.getOwner() == 2)
-//            paint.setColor(Color.BLUE);
-//
-//        for (Area[] myAreas: model.getAreas()){
-//            for(Area area : myAreas){
-//                areas.add(area);
-////                area.draw(canvas);
-//            }
-//        }
-//        for(int i = 0; i < areas.size(); i++){
-//            canvas.drawRect(areas.get(i).getCenter().getX() - GameDataModel.getLENGTH(),
-//                    areas.get(i).getCenter().getY() - GameDataModel.getLENGTH(),
-//                    areas.get(i).getCenter().getX() + GameDataModel.getLENGTH(),
-//                    areas.get(i).getCenter().getY() + GameDataModel.getLENGTH(),
-//                    areas.get(i).getPaint());
-//        }
-
 
         // adding lines to the arrayList of type Line
         for (Line line : model.getLines()) {
@@ -144,10 +115,6 @@ public class GameView extends View {
             canvas.drawLine(lines.get(i).getP1().getX(), lines.get(i).getP1().getY(),
                     lines.get(i).getP2().getX(), lines.get(i).getP2().getY(), lines.get(i).getPaint());
         }
-
-//        for (Line line : model.getLines()) {
-//            line.draw(canvas);
-//        }
 
         //Setting up dots (dots x and y coordinates are set up by 10?)
         for (GridPoint[] p_list : model.getGridPoints()) {
@@ -167,20 +134,7 @@ public class GameView extends View {
                 paint.setColor(Color.parseColor(player2Color));
             String myTurn = model.getTurn() % 2 == 0 ? SettingsActivity.player1Name + "'s Turn": SettingsActivity.player2Name + "'s Turn";
             activity.setTurn(myTurn);
-//            canvas.drawText("" + (model.getTurn() % 2 == 0 ? player1 : player2) + "'s Turn", getWidth() / 2, (int) (getWidth() / 10 * 3.5), paint);
         } else {
-            /*
-            GameActivity show = new GameActivity();
-            if (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()) {
-                show.showp1Winner();
-                //winner = "Player 1";
-            }else if (model.getPlayers()[0].getScore() == model.getPlayers()[1].getScore()){
-                show.showDraw();
-                //winner = "Draw";
-            }else{
-                show.showp2Winner();
-                //winner = "Player 2";
-            }*/
             activity.openWinningDialog();
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));
@@ -199,10 +153,6 @@ public class GameView extends View {
 
                 }
             }
-/*            paint.setColor(Color.BLACK);
-//            canvas.drawText("RETRY??", getWidth()/2,getHeight() - getHeight()/12, paint);
-            paint.setTextSize((int) (getWidth() / 10 * 0.6));
-            canvas.drawText("Touch the screen to restart", getWidth() / 2, getHeight() - getHeight() / 24, paint);*/
         }
     }
 

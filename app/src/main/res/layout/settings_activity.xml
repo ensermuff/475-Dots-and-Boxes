@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/settings_background"
+    android:paddingRight="2dp"
     tools:context=".Activities.SettingsActivity">
 
     <ImageButton
@@ -438,7 +439,8 @@
             android:orientation="vertical"
             android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
             <TextView
                 android:id="@+id/music"
@@ -518,45 +520,6 @@
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
                 </RadioGroup>
-                <!--                <Button-->
-                <!--                    android:id="@+id/song1"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="1"-->
-                <!--                    android:backgroundTint="#A1A7AF"-->
-                <!--                    android:fontFamily="@font/syncopate"-->
-                <!--                    android:text="song 1"-->
-                <!--                    android:textStyle="bold" />-->
-
-                <!--                <androidx.legacy.widget.Space-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="0.1" />-->
-
-                <!--                <Button-->
-                <!--                    android:id="@+id/song2"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="1"-->
-                <!--                    android:backgroundTint="#A1A7AF"-->
-                <!--                    android:fontFamily="@font/syncopate"-->
-                <!--                    android:text="song 2"-->
-                <!--                    android:textStyle="bold" />-->
-
-                <!--                <androidx.legacy.widget.Space-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="0.1" />-->
-
-                <!--                <Button-->
-                <!--                    android:id="@+id/song3"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="1"-->
-                <!--                    android:backgroundTint="#A1A7AF"-->
-                <!--                    android:fontFamily="@font/syncopate"-->
-                <!--                    android:text="song 3"-->
-                <!--                    android:textStyle="bold" />-->
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
