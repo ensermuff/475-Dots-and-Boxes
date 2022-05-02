@@ -171,7 +171,7 @@ public class GameView extends View {
         for (GridPoint[] p_list : model.getGridPoints()) {
             for (GridPoint p : p_list) {
                 paint.setColor(Color.BLACK);
-                canvas.drawCircle((p.getX()-Line.WIDTH/2) + 10, (p.getY()-Line.WIDTH/2) + 10,20, paint);
+                canvas.drawCircle((p.getX()-Line.WIDTH/2) + 10, (p.getY()-Line.WIDTH/2) + 10,25, paint);
             }
         }
         activity.setPlayerNames();

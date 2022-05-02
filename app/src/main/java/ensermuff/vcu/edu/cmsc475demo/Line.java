@@ -25,7 +25,7 @@ public class Line {
         this.bounds = new Rect();
         paint = new Paint();
         paint.setColor(Color.LTGRAY);
-        paint.setStrokeWidth(20);
+        paint.setStrokeWidth(30);
     }
 
     public GridPoint getP1() {
