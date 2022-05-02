@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+
 import java.util.ArrayList;
 
 import ensermuff.vcu.edu.cmsc475demo.Activities.GameActivity;
@@ -115,6 +117,7 @@ public class GameView extends View {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void onDraw(Canvas canvas) {
 //        for(Area area : areas){
 //            canvas.drawRect(area.getSquare(), area.getPaint());

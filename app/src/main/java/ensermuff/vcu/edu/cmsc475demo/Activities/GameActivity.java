@@ -1,5 +1,7 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
+
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -15,8 +17,10 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -24,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.res.ResourcesCompat;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
@@ -35,6 +40,7 @@ public class GameActivity extends AppCompatActivity {
     public static String player1 = "player1";
     public static String player2 = "player2";
     public static boolean infoGame = true;
+    public static ArrayList<String> historyList;
     String player1Color = SettingsActivity.player1Color;
     String player2Color = SettingsActivity.player2Color;
     GameView view;
@@ -258,6 +264,15 @@ public class GameActivity extends AppCompatActivity {
 
         winDialogHomeBtn.setOnClickListener((v) ->{
             infoGame = true;
+
+            String addp1Score = String.valueOf(model.getPlayers()[0].getScore());
+            String addp2Score = String.valueOf(model.getPlayers()[1].getScore());
+
+            //Adding score to history
+            historyList = new ArrayList<>();
+            historyList.add("1");
+            //HistoryActivity.addHistory(addp1Score+" "+ addp2Score);
+
             Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
             mySongs.stop();
             startActivity(startIntent);
