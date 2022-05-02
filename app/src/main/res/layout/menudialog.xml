@@ -22,6 +22,7 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
+            android:scaleY=".90"
             app:srcCompat="@drawable/sound_on"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -37,6 +38,7 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
+            android:scaleY=".90"
             app:srcCompat="@drawable/music_on"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -51,6 +53,7 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
+            android:scaleY=".90"
             app:srcCompat="@drawable/info"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -71,6 +74,7 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
+            android:scaleY=".90"
             app:srcCompat="@drawable/home"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -84,6 +88,7 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
+            android:scaleY=".90"
             app:srcCompat="@drawable/reset"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -97,6 +102,7 @@
             android:layout_weight="0.5"
             android:background="#D97E7E"
             android:scaleType="fitXY"
+            android:scaleY=".90"
             app:srcCompat="@drawable/resume"
             tools:ignore="SpeakableTextPresentCheck" />
 
