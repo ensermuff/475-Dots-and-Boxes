@@ -40,6 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static boolean touchp2Brown = false;
     public String tmpColor;
     public static int songNumber=1;
+    public static boolean sounds = true;
 
 
     SharedPreferences sharedPreferences;

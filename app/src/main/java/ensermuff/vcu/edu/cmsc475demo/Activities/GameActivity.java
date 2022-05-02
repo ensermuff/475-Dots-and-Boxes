@@ -208,6 +208,12 @@ public class GameActivity extends AppCompatActivity {
         soundBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //sound on by default
+                if(SettingsActivity.sounds == true ){
+                    SettingsActivity.sounds = false; //sets boolean to remove click sounds
+                } else {
+                    SettingsActivity.sounds = true; //sets boolean to add sounds
+                }
 
             }
         });
