@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -36,25 +37,8 @@ public class GameView extends View {
     Line lastLine;
     String player1Color = SettingsActivity.player1Color;
     String player2Color = SettingsActivity.player2Color;
+    MediaPlayer clickSounds;
 
-//    ArrayList<GridPoint> p1 = new ArrayList<>();
-//    ArrayList<GridPoint> p2 = new ArrayList<>();
-//    ArrayList<LINE_TYPE> line_types = new ArrayList<>();
-
-
-//    static GridPoint lastPoint;
-//    static GridPoint lasttPoint2;
-//    static LINE_TYPE lastLineType;
-
-//    public static GridPoint getLastPoint() {
-//        return lastPoint;
-//    }
-//    public static LINE_TYPE getLastLineType() {
-//        return lastLineType;
-//    }
-//    public static GridPoint getLasttPoint2() {
-//        return lasttPoint2;
-//    }
 
     public GameView(Context context, GameDataModel model) {
         super(context);
@@ -93,11 +77,9 @@ public class GameView extends View {
         paint.setStrokeWidth(8);
         setMinimumHeight(100);
         this.setFocusableInTouchMode(true);
+        clickSounds = MediaPlayer.create(getContext(), R.raw.mixkit_interface_click_1126);
 
 
-    }
-    public GameDataModel getModel(){
-        return model;
     }
 
     // doesn't work yet
@@ -246,6 +228,9 @@ public class GameView extends View {
                                 lastLine = line;
                                 line.setDraw(true);
                                 isClickedLine = true;
+                                if(SettingsActivity.sounds){
+                                    clickSounds.start();
+                                }
                                 Log.d("ddamddi", " [LINE]" +
                                         " (" + (line.getP1().getX() - GameDataModel.getxMin())
                                         / GameDataModel.getLENGTH() + "," + (line.getP1().getY() -
@@ -273,6 +258,9 @@ public class GameView extends View {
                                 lastLine = line;
                                 line.setDraw(true);
                                 isClickedLine = true;
+                                if(SettingsActivity.sounds){
+                                    clickSounds.start();
+                                }
                                 Log.d("ddamddi", " [LINE]   (" + (line.getP1().getX() - GameDataModel.getxMin()) / GameDataModel.getLENGTH() + "," + (line.getP1().getY() - GameDataModel.getyMin()) / GameDataModel.getLENGTH() + ")-(" + (line.getP2().getX() - GameDataModel.getxMin()) / GameDataModel.getLENGTH() + "," + (line.getP2().getY() - GameDataModel.getyMin()) / GameDataModel.getLENGTH() + ") is Drawn");
                                 break;
                             }
