@@ -47,6 +47,7 @@ public class GameActivity extends AppCompatActivity {
     GameDataModel model;
     Intent intent;
     MediaPlayer mySongs;
+    MediaPlayer clickSounds;
     ConstraintLayout myView;
     TextView theWinner;
 
@@ -60,6 +61,8 @@ public class GameActivity extends AppCompatActivity {
         intent = getIntent();
         player1 = intent.getStringExtra("player1");
         player2 = intent.getStringExtra("player2");
+
+        clickSounds = MediaPlayer.create(getApplicationContext(), R.raw.mixkit_interface_click_1126);
 
         if (SettingsActivity.songNumber == 1){
             mySongs = MediaPlayer.create(getApplicationContext(), R.raw.schemingweasal);
@@ -77,6 +80,9 @@ public class GameActivity extends AppCompatActivity {
         myMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(SettingsActivity.sounds){
+                    clickSounds.start();
+                }
                 openDialog();
             }
         });
@@ -169,6 +175,9 @@ public class GameActivity extends AppCompatActivity {
             musicBtn.setImageResource(R.drawable.music_off);
         }
         ImageButton soundBtn = menuDialog.findViewById(R.id.dialog_sound);
+        if(!SettingsActivity.sounds){
+            soundBtn.setImageResource(R.drawable.sound_off);
+        }
 
 
         infoBtn.setOnClickListener((v) ->{
@@ -209,10 +218,12 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //sound on by default
-                if(SettingsActivity.sounds == true ){
+                if(SettingsActivity.sounds){
                     SettingsActivity.sounds = false; //sets boolean to remove click sounds
+                    soundBtn.setImageResource(R.drawable.sound_off);
                 } else {
                     SettingsActivity.sounds = true; //sets boolean to add sounds
+                    soundBtn.setImageResource(R.drawable.sound_on);
                 }
 
             }
