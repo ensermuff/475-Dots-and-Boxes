@@ -559,14 +559,14 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="390dp"
+                android:layout_width="383dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 tools:ignore="MissingConstraints">
 
                 <EditText
                     android:id="@+id/player1Name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="173dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
@@ -578,7 +578,7 @@
 
                 <EditText
                     android:id="@+id/player2Name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
