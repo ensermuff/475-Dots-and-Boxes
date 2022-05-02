@@ -153,7 +153,7 @@ public class GameView extends View {
         for (GridPoint[] p_list : model.getGridPoints()) {
             for (GridPoint p : p_list) {
                 paint.setColor(Color.BLACK);
-                canvas.drawCircle((p.getX()-Line.WIDTH/2) + 10, (p.getY()-Line.WIDTH/2) + 10,25, paint);
+                canvas.drawCircle((p.getX()-Line.WIDTH/2) + 10, (p.getY()-Line.WIDTH/2) + 10,35, paint);
             }
         }
         activity.setPlayerNames();
@@ -184,16 +184,25 @@ public class GameView extends View {
             activity.openWinningDialog();
             paint.setColor(Color.RED);
             paint.setTextSize((int) (getWidth() / 10 * 1.2));
-            canvas.drawText("GAME OVER", getWidth() / 2, (int) (getWidth() / 10 * 16) + 25, paint);
-            if (model.isDrawGame)
-                canvas.drawText("DRAW", getWidth() / 2, (int) (getWidth() / 10 * 4), paint);
-            else
-                canvas.drawText("" + (model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore() ? player1 : player2) + " WIN!!!", getWidth() / 2, (int) (getWidth() / 10 * 17), paint);
 
-            paint.setColor(Color.BLACK);
+            String winningText;
+            if (model.isDrawGame){
+                winningText = "Draw Game\n Touch Screen to Continue";
+                activity.setGameOver(winningText);
+            } else {
+                if(model.getPlayers()[0].getScore() > model.getPlayers()[1].getScore()){
+                    winningText = SettingsActivity.player1Name + " Wins!";
+                    activity.setGameOver(winningText);
+                } else {
+                    winningText = SettingsActivity.player2Name + " Wins!";
+                    activity.setGameOver(winningText);
+
+                }
+            }
+/*            paint.setColor(Color.BLACK);
 //            canvas.drawText("RETRY??", getWidth()/2,getHeight() - getHeight()/12, paint);
             paint.setTextSize((int) (getWidth() / 10 * 0.6));
-            canvas.drawText("Touch the screen to restart", getWidth() / 2, getHeight() - getHeight() / 24, paint);
+            canvas.drawText("Touch the screen to restart", getWidth() / 2, getHeight() - getHeight() / 24, paint);*/
         }
     }
 

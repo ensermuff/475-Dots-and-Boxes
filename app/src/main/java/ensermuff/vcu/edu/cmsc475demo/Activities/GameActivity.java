@@ -127,6 +127,13 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    public void setGameOver(String winner){
+        TextView gameOverText = findViewById(R.id.GameOverText);
+        TextView restart = findViewById(R.id.restartText);
+        gameOverText.setText(winner);
+        restart.setText("Touch screen to restart");
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setPlayerNames() {
         TextView gamePlayer1 = findViewById(R.id.gameP1Name);

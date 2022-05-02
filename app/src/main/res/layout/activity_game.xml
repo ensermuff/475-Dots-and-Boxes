@@ -85,4 +85,27 @@
         app:layout_constraintTop_toBottomOf="@+id/menu"
         app:layout_constraintVertical_bias="0.024" />
 
+    <TextView
+        android:id="@+id/GameOverText"
+        android:layout_width="333dp"
+        android:layout_height="62dp"
+        android:fontFamily="@font/syncopate"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/restartText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/restartText"
+        android:layout_width="333dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/syncopate"
+        android:textSize="24dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
