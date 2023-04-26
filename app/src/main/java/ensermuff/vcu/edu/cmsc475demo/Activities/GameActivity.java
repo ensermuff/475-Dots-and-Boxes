@@ -96,7 +96,6 @@ public class GameActivity extends AppCompatActivity {
 //            }
 //        });
 
-
         Display display = getWindowManager().getDefaultDisplay();
         //Point screenSize = new Point(1000, 1500); // Entire device screen is x=1440 and y=2701
         Point screenSize = new Point();
@@ -107,13 +106,8 @@ public class GameActivity extends AppCompatActivity {
         //player Names
         setPlayerNames();
         // setContentView(view);
-        myView = (ConstraintLayout) findViewById(R.id.linearLayout);
+        myView = findViewById(R.id.linearLayout);
         myView.addView(view);
-
-//        if (model.checkGameOver()){
-//            // call the winningdialog
-//            openWinningDialog();
-//        }
     }
 
     public void setTurn(String myTurn) {
