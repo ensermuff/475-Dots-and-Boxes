@@ -31,4 +31,6 @@ public class MainActivityTest {
         onView(withId(R.id.SquaresLogo)).check(matches((isDisplayed())));
         onView(withId(R.id.Vcu)).check(matches((isDisplayed())));
     }
+    //test functionality of the buttons
+
 }

@@ -3,14 +3,15 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "ensermuff.vcu.edu.cmsc475demo"
-        minSdk 22
-        targetSdk 31
+        minSdk 26
+        targetSdk 33
         versionCode 1
         versionName "1.0"
+        namespace 'ensermuff.vcu.edu.cmsc475demo'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -22,8 +23,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding = true
