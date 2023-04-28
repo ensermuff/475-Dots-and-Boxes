@@ -4,10 +4,12 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.junit.Assert.assertEquals;
 
+import android.content.Intent;
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,5 +34,27 @@ public class MainActivityTest {
         onView(withId(R.id.Vcu)).check(matches((isDisplayed())));
     }
     //test functionality of the buttons
+    @Test
+    public void testPlayBtnAction(){
+//        onView(withId(R.id.playBtn)).perform(click());
+        ActivityScenario<GameActivity> myScenario = ActivityScenario.launch(GameActivity.class);
+        myScenario.onActivity(activity -> {
+              activity.findViewById(R.id.playBtn).performClick();
+              Intent expectedIntent = new Intent(activity, GameActivity.class);
+//              assertEquals(expectedIntent.getComponent(), activity.getApplicationContext());
+        });
+    }
+    @Test
+    public void testSettingsBtnAction(){
+
+    }
+    @Test
+    public void testHistoryBtnAction(){
+
+    }
+    @Test
+    public void testInfoBtnAction(){
+
+    }
 
 }
