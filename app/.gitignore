@@ -1,6 +1,9 @@
 /build
 app/src/ns-1
 app/src/ns-2
+app/src/css
+app/src/img
+app/src/js
 app/src/index.html
 app/src/index_SORT_BY_BLOCK.html
 app/src/index_SORT_BY_BLOCK_DESC.html
