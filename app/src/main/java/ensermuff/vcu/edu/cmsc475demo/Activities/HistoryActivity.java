@@ -1,13 +1,9 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -17,13 +13,13 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
 import ensermuff.vcu.edu.cmsc475demo.R;
 
 public class HistoryActivity extends AppCompatActivity {
-
     ArrayAdapter arrayAdapter;
+
     ListView listView;
 
     @Override
@@ -79,7 +75,6 @@ public class HistoryActivity extends AppCompatActivity {
     };
         listView.setAdapter(arrayAdapter);
     }
-
     public static void removeHistory(String history){
         GameActivity.historyList.remove(0);
         GameActivity.historyList.add(history);
@@ -87,4 +82,11 @@ public class HistoryActivity extends AppCompatActivity {
     public static void addHistory(String history){
         GameActivity.historyList.add(history);
     }
+    public ArrayAdapter getArrayAdapter() {
+        return arrayAdapter;
+    }
+    public ListView getListView() {
+        return listView;
+    }
+
 }

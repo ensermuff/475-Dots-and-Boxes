@@ -12,11 +12,12 @@ android {
         versionCode 1
         versionName "1.0"
         namespace 'ensermuff.vcu.edu.cmsc475demo'
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
