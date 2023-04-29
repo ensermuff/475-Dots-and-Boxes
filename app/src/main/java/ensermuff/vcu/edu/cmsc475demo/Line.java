@@ -12,6 +12,7 @@ public class Line {
     static int WIDTH = 25;
     private GridPoint p1, p2;
     private boolean isDraw;
+
     private Rect bounds;
     private Paint paint;
     private LINE_TYPE line_type;
@@ -44,6 +45,9 @@ public class Line {
         isDraw = draw;
     }
 
+    public void setColor(String color) {
+        paint.setColor(Color.parseColor(color));
+    }
     public void setPaint(Paint paint) {
         this.paint = paint;
     }
@@ -52,18 +56,9 @@ public class Line {
         return paint;
     }
 
-    public void setColor(String color) {
-        paint.setColor(Color.parseColor(color));
-    }
-
     public LINE_TYPE getLINE_TYPE() {
         return line_type;
     }
-
-//    public void draw(Canvas canvas) {
-//        bounds.set(p1.getX() - WIDTH / 2, p1.getY() - WIDTH / 2, p2.getX() + WIDTH / 2, p2.getY() + WIDTH / 2);
-//        canvas.drawRect(bounds, paint);
-//    }
 
     public GridPoint getCenter() {
         return new GridPoint((getP1().getX() + getP2().getX()) / 2, (getP1().getY() + getP2().getY()) / 2);
