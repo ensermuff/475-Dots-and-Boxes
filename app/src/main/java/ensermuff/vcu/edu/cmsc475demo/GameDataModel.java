@@ -18,6 +18,7 @@ public class GameDataModel {
     private static Player[] players;
     private static int xMin;
     private static int yMin;
+
     public static int LENGTH;
     private static GridPoint[][] gridPoints;
 
@@ -105,6 +106,9 @@ public class GameDataModel {
     public static ArrayList<Line> getLines() {
         return lines;
     }
+    public static void setLENGTH(int LENGTH) {
+        GameDataModel.LENGTH = LENGTH;
+    }
 
     public static int getLENGTH() {
         return LENGTH;
@@ -123,7 +127,7 @@ public class GameDataModel {
         Log.d("ddamddi", " [TURN]   Player " + (turn % 2 + 1) + "'s Turn");
     }
 
-    private void setGridSize(Point screenSize) {
+    public void setGridSize(Point screenSize) {
         if(GRID == 5) {
             xMin = screenSize.x / 12;
             yMin = screenSize.y / 10 * 3;

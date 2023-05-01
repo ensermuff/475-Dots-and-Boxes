@@ -1,8 +1,5 @@
 package ensermuff.vcu.edu.cmsc475demo.Activities;
 
-
-
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,10 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -26,10 +21,8 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.res.ResourcesCompat;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 import ensermuff.vcu.edu.cmsc475demo.GameDataModel;
 import ensermuff.vcu.edu.cmsc475demo.GameView;
@@ -51,7 +44,6 @@ public class GameActivity extends AppCompatActivity {
     ConstraintLayout myView;
     TextView theWinner;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -87,16 +79,6 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-//        Button myUndo = findViewById(R.id.undoTurn);
-//        myUndo.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view2) {
-//                view.undo();
-//                // redraw the canvas over again with the updated arrayList of type line and updated arrayList of type area
-//            }
-//        });
-
-
         Display display = getWindowManager().getDefaultDisplay();
         //Point screenSize = new Point(1000, 1500); // Entire device screen is x=1440 and y=2701
         Point screenSize = new Point();
@@ -107,13 +89,8 @@ public class GameActivity extends AppCompatActivity {
         //player Names
         setPlayerNames();
         // setContentView(view);
-        myView = (ConstraintLayout) findViewById(R.id.linearLayout);
+        myView = findViewById(R.id.linearLayout);
         myView.addView(view);
-
-//        if (model.checkGameOver()){
-//            // call the winningdialog
-//            openWinningDialog();
-//        }
     }
 
     public void setTurn(String myTurn) {
@@ -134,7 +111,6 @@ public class GameActivity extends AppCompatActivity {
         restart.setText("Touch screen to restart");
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void setPlayerNames() {
         TextView gamePlayer1 = findViewById(R.id.gameP1Name);
         Typeface typeface = getResources().getFont(R.font.syncopate_bold);
@@ -316,22 +292,4 @@ public class GameActivity extends AppCompatActivity {
         winningDialog.show();
 
     }
-    /*public void openInfoDialog(){
-        final Dialog menuDialog = new Dialog(GameActivity.this);
-        //added custom view to dialog with no title
-        menuDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-        menuDialog.setCancelable(false);
-        //Mention the name of the custom dialog
-        menuDialog.setContentView(R.layout.activity_information);
-
-        Button infoBtn = menuDialog.findViewById(R.id.returnBtn);
-
-        infoBtn.setOnClickListener((v) ->{
-            menuDialog.dismiss();
-        });
-
-        menuDialog.show();
-    }*/
-
 }

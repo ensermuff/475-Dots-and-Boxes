@@ -15,4 +15,14 @@ public class GridPoint {
     public int getY() {
         return y;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof GridPoint other)) {
+            return false;
+        }
+        return this.x == other.x && this.y == other.y;
+    }
 }
